@@ -29,11 +29,6 @@ public class Player : MonoBehaviour
 		playfabManager.LoadPlayer();
 	}
 
-	private void Start()
-	{
-		//playfabManager.LoadPlayer();
-	}
-
 	public void SavePlayer()
 	{
 		playfabManager.SavePlayer();
