@@ -2,25 +2,45 @@
  * Eflox - Charles d'Ansembourg
 */
 
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GameUI : MonoBehaviour
 {
-	[SerializeField] private Player player;
+	public Player player;
+	public GameManager gameManager;
+	public Items items;
+
 	[SerializeField] private Text levelText;
+	[SerializeField] private Text nameText;
 
 	[SerializeField] private GameObject[] vitalityBar, strengthBar, intellectBar, agilityBar, magickaBar;
 
-	private void Start()
-	{
-		Invoke("UpdateUI", 1.0f);
-	}
+	[SerializeField] GameObject[] inventoryWeapons;
+	[SerializeField] private Color normalColor;
+	[SerializeField] private Color shadedColor;
 
-	void UpdateUI()
+	[SerializeField] private GameObject helmetSelector;
+	[SerializeField] private GameObject helmetButton;
+	private List<GameObject> helmetbuttons = new List<GameObject>();
+
+	public void UpdateUI()
 	{
 		levelText.text = player.level.ToString();
+		nameText.text = player.characterName;
+
+		SetWeapons();
 		SetStats();
+
+	}
+
+	private void SetWeapons()
+	{
+		for (int i = 0; i < player.weapons.Count; i++)
+		{
+			inventoryWeapons[player.weapons[i]].GetComponent<Image>().color = normalColor;
+		}
 	}
 
 	private void SetStats()
@@ -35,5 +55,32 @@ public class GameUI : MonoBehaviour
 			agilityBar[i].SetActive(true);
 		for (int i = 0; i < player.magicka; i++)
 			magickaBar[i].SetActive(true);
+	}
+
+	public void LoadHelmets()
+	{
+		helmetSelector.SetActive(true);
+		for (int i = 0; i < player.helmets.Count; i++)
+		{
+			GameObject tmpButton = Instantiate(helmetButton) as GameObject;
+			
+			tmpButton.GetComponent<ButtonID>().ID = player.helmets[i];
+			tmpButton.GetComponentInChildren<Image>().sprite = player.items.helmets[player.helmets[i]];
+			tmpButton.GetComponent<ButtonID>().UI = this;
+			tmpButton.transform.SetParent(helmetSelector.transform);
+
+			helmetbuttons.Add(tmpButton);
+		}
+	}
+
+	public void HelmetSelected(int helmetID)
+	{
+		foreach (var helmet in helmetbuttons)
+		{
+			Destroy(helmet);
+		}
+		helmetSelector.SetActive(false);
+		player.helmet = helmetID;
+		gameManager.SavePlayer();
 	}
 }

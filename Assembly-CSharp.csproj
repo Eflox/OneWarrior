@@ -64,7 +64,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\ButtonID.cs" />
+    <Compile Include="Assets\FightManager.cs" />
+    <Compile Include="Assets\GameManager.cs" />
     <Compile Include="Assets\GameUI.cs" />
+    <Compile Include="Assets\GeneratePlayer.cs" />
     <Compile Include="Assets\Scripts\CharacterCustomizer.cs" />
     <Compile Include="Assets\Scripts\Items.cs" />
     <Compile Include="Assets\Scripts\MenuUI.cs" />

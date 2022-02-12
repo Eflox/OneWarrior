@@ -4,48 +4,31 @@
 
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 using PlayFab;
 using PlayFab.ClientModels;
 using Newtonsoft.Json;
 
 public class PlayfabManager : MonoBehaviour
 {
-	[SerializeField] Player player;
+	[SerializeField] public Player player;
+	[SerializeField] public GameManager gameManager;
 
-	private void Awake()
-	{
-		DontDestroyOnLoad(this);
-	}
-
-	private void Start()
-	{
-		if (PlayFabClientAPI.IsClientLoggedIn())
-			Debug.Log("Client already logged in.");
-		else
-			Login();
-	}
-
-	void Login()
+	public void Login()
 	{
 		var request = new LoginWithCustomIDRequest
 		{
 			CustomId = SystemInfo.deviceUniqueIdentifier,
 			CreateAccount = true
 		};
-		PlayFabClientAPI.LoginWithCustomID(request, OnSuccess, OnError);
+		PlayFabClientAPI.LoginWithCustomID(request, LoginOnSuccess, OnError);
 	}
 
-	void OnSuccess(LoginResult result)
+	void LoginOnSuccess(LoginResult result)
 	{
 		Debug.Log("Successful login/account created!");
+		gameManager.LoggedIn();
 	}
 
-	void OnError(PlayFabError error)
-	{
-		Debug.Log("Error while logging in/creating account.");
-		Debug.Log(error.GenerateErrorReport());
-	}
 
 	public void LoadPlayer()
 	{
@@ -61,12 +44,13 @@ public class PlayfabManager : MonoBehaviour
 			List <PlayerData> players = JsonConvert.DeserializeObject<List<PlayerData>>(result.Data["PlayerData"].Value);
 			player.LoadPlayer(players[0]);
 		}
+		gameManager.PlayerHasBeenLoaded();
 	}
 
-	public void SavePlayer()
+	public void SavePlayer()	//Saves the player data to playfab servers
 	{
 		List<PlayerData> players = new List<PlayerData>();
-		players.Add(player.ReturnClass());
+		players.Add(player.ReturnDataClass());
 
 		var request = new UpdateUserDataRequest
 		{
@@ -78,12 +62,13 @@ public class PlayfabManager : MonoBehaviour
 		PlayFabClientAPI.UpdateUserData(request, OnDataSend, OnError);
 	}
 
-	void OnDataSend(UpdateUserDataResult result)
+	void OnDataSend(UpdateUserDataResult result)		//Receives confirmation player data has been saved
 	{
 		Debug.Log("Successfully sent data!");
+		gameManager.PlayerHasBeenSaved();
 	}
 
-	public void DeletePlayerData()
+	public void DeletePlayerData()		//Deletes player data on the playfab server
 	{
 		var request = new UpdateUserDataRequest
 		{
@@ -95,21 +80,32 @@ public class PlayfabManager : MonoBehaviour
 		PlayFabClientAPI.UpdateUserData(request, OnDataSend, OnError);
 	}
 
-	public void PlayerExist()
+	public void DoesPlayerExist()		//Pings data
 	{
-		PlayFabClientAPI.GetUserData(new GetUserDataRequest(), OnDataCheckRecieved, OnError);
+		PlayFabClientAPI.GetUserData(new GetUserDataRequest(), ReceivePlayerData, OnError);
 	}
 
-	void OnDataCheckRecieved(GetUserDataResult result)
+	void ReceivePlayerData(GetUserDataResult result)		//Results of the data lets us know whether player exists or not
 	{
-		
 		if (result.Data != null && result.Data.ContainsKey("PlayerData"))
-		{
-			SceneManager.LoadScene("GameScene");
-		}
+			gameManager.PlayerHasBeenCreated();
 		else
-		{
-			SceneManager.LoadScene("CharacterCreationScene");
-		}
+			gameManager.PlayerHasNotBeenCreated();
+	}
+
+	void OnError(PlayFabError error)
+	{
+		Debug.Log("Error while logging in/creating account.");
+		Debug.Log(error.GenerateErrorReport());
+	}
+
+	void GetOtherPlayerNames()
+	{
+		PlayFabClientAPI.GetUserData(new GetUserDataRequest(), OtherUserDataReceived, OnError);
+	}
+
+	void OtherUserDataReceived(GetUserDataResult result)
+	{
+
 	}
 }

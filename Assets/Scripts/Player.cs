@@ -3,40 +3,42 @@
 */
 
 using UnityEngine;
+using System.Collections.Generic;
 
 public class Player : MonoBehaviour
 {
-	
-	Items items;
-	PlayfabManager playfabManager;
+	public GameManager gameManager;
+	public Items items;
+	public FightManager fightManager;
 
+	public string characterName;
 	public int level;
+	public float xp;
+	public int maxHealth;
+
 	public int vitality, strength, intellec, agility, magicka;
 
-	public int hairColor, hair, facialHairColor, facialHair, skinColor, head, shieldHand, weaponHand;
+	public int hairColor, hair, facialHairColor, facialHair, skinColor, head, shieldHand, weaponHand, helmet;
 
-	public int[] helmets;
-	public int[] skills;
-	public int[] weapons;
-	public int[] pets;
+	public List<int> helmets;
+	public List<int> skills;
+	public List<int> weapons;
+	public List<int> pets;
 
+	private float originalYTMP;
 	[SerializeField] private SpriteRenderer hairSlot, facialHairSlot, headSlot, shieldHandSlot, weaponHandSlot, weaponSlot, shieldSlot;
 
-	private void Awake()
+	private void Start()
 	{
-		items = GameObject.Find("_ITEMS_").GetComponent<Items>();
-		playfabManager = GameObject.Find("_PLAYFABMANAGER_").GetComponent<PlayfabManager>();
-		playfabManager.LoadPlayer();
-	}
-
-	public void SavePlayer()
-	{
-		playfabManager.SavePlayer();
+		originalYTMP = transform.position.y;
 	}
 
 	public void LoadPlayer(PlayerData data)
 	{
+		characterName = data.characterName;
 		level = data.level;
+		xp = data.xp;
+		maxHealth = data.maxHealth;
 
 		vitality = data.vitality;
 		strength = data.strength;
@@ -52,6 +54,7 @@ public class Player : MonoBehaviour
 		head = data.head;
 		shieldHand = data.shieldHand;
 		weaponHand = data.weaponHand;
+		helmet = data.helmet;
 
 		helmets = data.helmets;
 		skills = data.skills;
@@ -63,15 +66,78 @@ public class Player : MonoBehaviour
 
 	public void LoadVisuals()
 	{
-		hairSlot.sprite = items.hair[hairColor][hair];
+		hairSlot.transform.position = new Vector3(hairSlot.transform.position.x, originalYTMP, 0);
+
+		if (helmet > 0)
+		{
+			hairSlot.sprite = items.helmets[helmet];
+			//facialHairSlot.sprite = null;
+			hairSlot.transform.position = new Vector3(hairSlot.transform.position.x, hairSlot.transform.position.y + 0.02f, 0);
+		}
+		else
+		{
+			//hairSlot.transform.position = new Vector3(hairSlot.transform.position.x, hairSlot.transform.position.y - 0.02f, 0);
+			hairSlot.sprite = items.hair[hairColor][hair];
+		}
+
 		facialHairSlot.sprite = items.facialHair[facialHairColor][facialHair];
 		headSlot.sprite = items.head[skinColor][head];
 		shieldHandSlot.sprite = items.hand[skinColor];
 		weaponHandSlot.sprite = items.hand[skinColor];
 	}
 
-	public PlayerData ReturnClass()
+	public void LevelUp()
 	{
-		return new PlayerData(level, vitality, strength, intellec, agility, magicka, hairColor, hair, facialHairColor, facialHair, skinColor, head, shieldHand, weaponHand, helmets, skills, weapons, pets);
+		level++;
+
+		for (int i = 0; i < 1; i++)
+		{
+			RecieveHelmet();
+			//int randomCategory = Random.Range(0, 3);
+			int randomCategory = 0;
+
+			if (randomCategory == 0)
+			{
+				if (weapons.Count >= items.weapons.Length)
+					return;
+
+				int ran = Random.Range(0, items.weapons.Length);
+
+				while (weapons.Contains(ran))
+					ran = Random.Range(0, items.weapons.Length);
+
+				weapons.Add(ran);
+				Debug.Log("Unlocked Weapon: " + items.weapons[ran].name);
+			}
+			else if (randomCategory == 1)
+			{
+
+			}
+			else if (randomCategory == 2)
+			{
+
+			}
+		}
+		gameManager.SavePlayer();
+	}
+
+	void RecieveHelmet()
+	{
+		int ran = Random.Range(0, items.helmets.Length);
+
+		while (helmets.Contains(ran))
+			ran = Random.Range(0, items.helmets.Length);
+
+		helmets.Add(ran);
+	}
+
+	public PlayerData ReturnDataClass()
+	{
+		return new PlayerData(characterName, level, xp, vitality, strength, intellec, agility, magicka, hairColor, hair, facialHairColor, facialHair, skinColor, head, shieldHand, weaponHand, helmet, helmets, skills, weapons, pets);
+	}
+
+	public void NewOpponent(PlayerData oppponent)
+	{
+		fightManager.OrganiseFight(oppponent);
 	}
 }

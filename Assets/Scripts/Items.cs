@@ -25,13 +25,20 @@ public class Items : MonoBehaviour
 	[SerializeField] private string DescriptionHand = "Character hand.";
 	public Sprite[] hand;
 
+	/*
 	[Header("--Body--")]
 	[SerializeField] private string DescriptionBody = "Character body color.";
 	public string[] bodyAnimatorPaths;
+	*/
+
+	[Header("--Helmets--")]
+	[SerializeField] private string DescriptionHelmet = "Helmet cosmetics.";
+	public Sprite[] helmets;
 
 	[Header("--Weapons--")]
 	[SerializeField] private string DescriptionWeapon = "Weapon classes.";
 	public Weapon[] weapons;
+
 
 
 	private void SetHairArray()

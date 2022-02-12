@@ -6,14 +6,18 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.IO;
 
-
 public class MenuUI : MonoBehaviour
 {
 	[SerializeField] PlayfabManager playfabManager;
 
+	private void Start()
+	{
+		
+	}
+
 	public void PlayGame()
 	{
-		playfabManager.PlayerExist();
+		//playfabManager.PlayerExist();
 	}
 
 	public void DeleteCharacter()

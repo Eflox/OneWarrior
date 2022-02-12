@@ -3,7 +3,12 @@
 */
 
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using PlayFab;
+using PlayFab.ClientModels;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace OneWarriorCharacterCreation
 {
@@ -14,10 +19,20 @@ namespace OneWarriorCharacterCreation
 
 		[SerializeField] private GameObject[] vitalityBar, strengthBar, intellectBar, agilityBar, magickaBar;
 
+		[SerializeField] private InputField nameField;
+		[SerializeField] private Button createButton;
+
 		private void Start()
 		{
+			nameField.onValueChanged.AddListener(delegate { WroteName(); });
 			SetDefault();
 			SetStats();
+		}
+
+		void WroteName()
+		{
+			player.characterName = nameField.text;
+			createButton.interactable = true;
 		}
 
 		public void Randomise()
@@ -93,14 +108,34 @@ namespace OneWarriorCharacterCreation
 			player.skinColor = 0;
 			player.head = 0;
 
-
 			player.LoadVisuals();
 		}
 
 		public void SavePlayer()
 		{
-			player.SavePlayer();
+			List<PlayerData> players = new List<PlayerData>();
+			players.Add(player.ReturnDataClass());
+
+			var request = new UpdateUserDataRequest
+			{
+				Data = new Dictionary<string, string>
+			{
+				{"PlayerData", JsonConvert.SerializeObject(players) }
+			}
+			};
+			PlayFabClientAPI.UpdateUserData(request, OnDataSend, OnError);
+		}
+
+		void OnDataSend(UpdateUserDataResult result)
+		{
+			Debug.Log("Successfully sent data!");
 			SceneManager.LoadScene("GameScene");
+		}
+
+		void OnError(PlayFabError error)
+		{
+			Debug.Log("Error while logging in/creating account.");
+			Debug.Log(error.GenerateErrorReport());
 		}
 
 		private void ResetStats()
@@ -141,9 +176,9 @@ namespace OneWarriorCharacterCreation
 			player.magicka = 1;
 
 
-			for (int i = 0; i < 10; i++)
+			for (int i = 0; i < 6; i++) //temporarily 6 normally 10
 			{
-				int j = Random.Range(0, 5);
+				int j = Random.Range(0, 4); //temporarily 4 as magicka is not used for the moment
 
 				if (j == 0)
 					player.vitality++;
