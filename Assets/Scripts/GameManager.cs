@@ -67,6 +67,7 @@ public class GameManager : MonoBehaviour
 
 	public void PlayerHasBeenLoaded()		//Only updates the UI once all of the above is done eg. logged in and player loaded
 	{
+		UI.EnableButtons();
 		UI.UpdateUI();
 	}
 

@@ -1,0 +1,1742 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1086939656389910596
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5122379522629755276}
+  - component: {fileID: 7533429779980728045}
+  m_Layer: 0
+  m_Name: FightRecord(Clone)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5122379522629755276
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086939656389910596}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.041083068, y: 0.0215833, z: -915.3379}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7533429779980728045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086939656389910596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97c7a622ae90c4beab6eb0f4ea04f6d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1:
+    characterName: SexyBeast
+    level: 1
+    xp: 0
+    maxHealth: 110
+    constitution: 2
+    strength: 2
+    agility: 3
+    speed: 3
+    hairColor: 3
+    hair: 15
+    facialHairColor: 4
+    facialHair: 23
+    skinColor: 3
+    head: 32
+    shieldHand: 0
+    weaponHand: 0
+    helmet: 0
+    equippedWeapon: 0
+    helmets: 
+    skills: 
+    weapons: 
+    pets: 
+  player2:
+    characterName: Opponent
+    level: 1
+    xp: 0
+    maxHealth: 110
+    constitution: 2
+    strength: 2
+    agility: 3
+    speed: 3
+    hairColor: 6
+    hair: 8
+    facialHairColor: 6
+    facialHair: 3
+    skinColor: 2
+    head: 7
+    shieldHand: 0
+    weaponHand: 0
+    helmet: 0
+    equippedWeapon: 0
+    helmets: 
+    skills: 
+    weapons: 
+    pets: 
+  allTurns:
+  - attacker:
+      characterName: SexyBeast
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 3
+      hair: 15
+      facialHairColor: 4
+      facialHair: 23
+      skinColor: 3
+      head: 32
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    defender:
+      characterName: Opponent
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 6
+      hair: 8
+      facialHairColor: 6
+      facialHair: 3
+      skinColor: 2
+      head: 7
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    explanation: SexyBeast attacked Opponent and dealt 13 damage
+    damageDone: 13
+    healthLeft: 97
+    equippedWeapon: 0
+    threwWeapon: 0
+    weaponUsed:
+      name: 
+      image: {fileID: 0}
+      damage: 0
+  - attacker:
+      characterName: Opponent
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 6
+      hair: 8
+      facialHairColor: 6
+      facialHair: 3
+      skinColor: 2
+      head: 7
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    defender:
+      characterName: SexyBeast
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 3
+      hair: 15
+      facialHairColor: 4
+      facialHair: 23
+      skinColor: 3
+      head: 32
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    explanation: Opponent attacked SexyBeast and dealt 8 damage
+    damageDone: 8
+    healthLeft: 102
+    equippedWeapon: 0
+    threwWeapon: 0
+    weaponUsed:
+      name: 
+      image: {fileID: 0}
+      damage: 0
+  - attacker:
+      characterName: SexyBeast
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 3
+      hair: 15
+      facialHairColor: 4
+      facialHair: 23
+      skinColor: 3
+      head: 32
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    defender:
+      characterName: Opponent
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 6
+      hair: 8
+      facialHairColor: 6
+      facialHair: 3
+      skinColor: 2
+      head: 7
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    explanation: SexyBeast attacked Opponent and dealt 0 damage
+    damageDone: 0
+    healthLeft: 97
+    equippedWeapon: 0
+    threwWeapon: 0
+    weaponUsed:
+      name: 
+      image: {fileID: 0}
+      damage: 0
+  - attacker:
+      characterName: Opponent
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 6
+      hair: 8
+      facialHairColor: 6
+      facialHair: 3
+      skinColor: 2
+      head: 7
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    defender:
+      characterName: SexyBeast
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 3
+      hair: 15
+      facialHairColor: 4
+      facialHair: 23
+      skinColor: 3
+      head: 32
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    explanation: Opponent attacked SexyBeast and dealt 11 damage
+    damageDone: 11
+    healthLeft: 91
+    equippedWeapon: 0
+    threwWeapon: 0
+    weaponUsed:
+      name: 
+      image: {fileID: 0}
+      damage: 0
+  - attacker:
+      characterName: SexyBeast
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 3
+      hair: 15
+      facialHairColor: 4
+      facialHair: 23
+      skinColor: 3
+      head: 32
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    defender:
+      characterName: Opponent
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 6
+      hair: 8
+      facialHairColor: 6
+      facialHair: 3
+      skinColor: 2
+      head: 7
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    explanation: SexyBeast attacked Opponent and dealt 11 damage
+    damageDone: 11
+    healthLeft: 86
+    equippedWeapon: 0
+    threwWeapon: 0
+    weaponUsed:
+      name: 
+      image: {fileID: 0}
+      damage: 0
+  - attacker:
+      characterName: Opponent
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 6
+      hair: 8
+      facialHairColor: 6
+      facialHair: 3
+      skinColor: 2
+      head: 7
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    defender:
+      characterName: SexyBeast
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 3
+      hair: 15
+      facialHairColor: 4
+      facialHair: 23
+      skinColor: 3
+      head: 32
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    explanation: Opponent attacked SexyBeast and dealt 0 damage
+    damageDone: 0
+    healthLeft: 91
+    equippedWeapon: 0
+    threwWeapon: 0
+    weaponUsed:
+      name: 
+      image: {fileID: 0}
+      damage: 0
+  - attacker:
+      characterName: SexyBeast
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 3
+      hair: 15
+      facialHairColor: 4
+      facialHair: 23
+      skinColor: 3
+      head: 32
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    defender:
+      characterName: Opponent
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 6
+      hair: 8
+      facialHairColor: 6
+      facialHair: 3
+      skinColor: 2
+      head: 7
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    explanation: SexyBeast attacked Opponent and dealt 15 damage
+    damageDone: 15
+    healthLeft: 71
+    equippedWeapon: 0
+    threwWeapon: 0
+    weaponUsed:
+      name: 
+      image: {fileID: 0}
+      damage: 0
+  - attacker:
+      characterName: Opponent
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 6
+      hair: 8
+      facialHairColor: 6
+      facialHair: 3
+      skinColor: 2
+      head: 7
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    defender:
+      characterName: SexyBeast
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 3
+      hair: 15
+      facialHairColor: 4
+      facialHair: 23
+      skinColor: 3
+      head: 32
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    explanation: Opponent attacked SexyBeast and dealt 10 damage
+    damageDone: 10
+    healthLeft: 81
+    equippedWeapon: 0
+    threwWeapon: 0
+    weaponUsed:
+      name: 
+      image: {fileID: 0}
+      damage: 0
+  - attacker:
+      characterName: SexyBeast
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 3
+      hair: 15
+      facialHairColor: 4
+      facialHair: 23
+      skinColor: 3
+      head: 32
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    defender:
+      characterName: Opponent
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 6
+      hair: 8
+      facialHairColor: 6
+      facialHair: 3
+      skinColor: 2
+      head: 7
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    explanation: SexyBeast attacked Opponent and dealt 12 damage
+    damageDone: 12
+    healthLeft: 59
+    equippedWeapon: 0
+    threwWeapon: 0
+    weaponUsed:
+      name: 
+      image: {fileID: 0}
+      damage: 0
+  - attacker:
+      characterName: Opponent
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 6
+      hair: 8
+      facialHairColor: 6
+      facialHair: 3
+      skinColor: 2
+      head: 7
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    defender:
+      characterName: SexyBeast
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 3
+      hair: 15
+      facialHairColor: 4
+      facialHair: 23
+      skinColor: 3
+      head: 32
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    explanation: Opponent attacked SexyBeast and dealt 8 damage
+    damageDone: 8
+    healthLeft: 73
+    equippedWeapon: 0
+    threwWeapon: 0
+    weaponUsed:
+      name: 
+      image: {fileID: 0}
+      damage: 0
+  - attacker:
+      characterName: SexyBeast
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 3
+      hair: 15
+      facialHairColor: 4
+      facialHair: 23
+      skinColor: 3
+      head: 32
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    defender:
+      characterName: Opponent
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 6
+      hair: 8
+      facialHairColor: 6
+      facialHair: 3
+      skinColor: 2
+      head: 7
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    explanation: SexyBeast attacked Opponent and dealt 0 damage
+    damageDone: 0
+    healthLeft: 59
+    equippedWeapon: 0
+    threwWeapon: 0
+    weaponUsed:
+      name: 
+      image: {fileID: 0}
+      damage: 0
+  - attacker:
+      characterName: Opponent
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 6
+      hair: 8
+      facialHairColor: 6
+      facialHair: 3
+      skinColor: 2
+      head: 7
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    defender:
+      characterName: SexyBeast
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 3
+      hair: 15
+      facialHairColor: 4
+      facialHair: 23
+      skinColor: 3
+      head: 32
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    explanation: Opponent attacked SexyBeast and dealt 10 damage
+    damageDone: 10
+    healthLeft: 63
+    equippedWeapon: 0
+    threwWeapon: 0
+    weaponUsed:
+      name: 
+      image: {fileID: 0}
+      damage: 0
+  - attacker:
+      characterName: SexyBeast
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 3
+      hair: 15
+      facialHairColor: 4
+      facialHair: 23
+      skinColor: 3
+      head: 32
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    defender:
+      characterName: Opponent
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 6
+      hair: 8
+      facialHairColor: 6
+      facialHair: 3
+      skinColor: 2
+      head: 7
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    explanation: SexyBeast attacked Opponent and dealt 13 damage
+    damageDone: 13
+    healthLeft: 46
+    equippedWeapon: 0
+    threwWeapon: 0
+    weaponUsed:
+      name: 
+      image: {fileID: 0}
+      damage: 0
+  - attacker:
+      characterName: Opponent
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 6
+      hair: 8
+      facialHairColor: 6
+      facialHair: 3
+      skinColor: 2
+      head: 7
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    defender:
+      characterName: SexyBeast
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 3
+      hair: 15
+      facialHairColor: 4
+      facialHair: 23
+      skinColor: 3
+      head: 32
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    explanation: Opponent attacked SexyBeast and dealt 0 damage
+    damageDone: 0
+    healthLeft: 63
+    equippedWeapon: 0
+    threwWeapon: 0
+    weaponUsed:
+      name: 
+      image: {fileID: 0}
+      damage: 0
+  - attacker:
+      characterName: SexyBeast
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 3
+      hair: 15
+      facialHairColor: 4
+      facialHair: 23
+      skinColor: 3
+      head: 32
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    defender:
+      characterName: Opponent
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 6
+      hair: 8
+      facialHairColor: 6
+      facialHair: 3
+      skinColor: 2
+      head: 7
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    explanation: SexyBeast attacked Opponent and dealt 8 damage
+    damageDone: 8
+    healthLeft: 38
+    equippedWeapon: 0
+    threwWeapon: 0
+    weaponUsed:
+      name: 
+      image: {fileID: 0}
+      damage: 0
+  - attacker:
+      characterName: Opponent
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 6
+      hair: 8
+      facialHairColor: 6
+      facialHair: 3
+      skinColor: 2
+      head: 7
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    defender:
+      characterName: SexyBeast
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 3
+      hair: 15
+      facialHairColor: 4
+      facialHair: 23
+      skinColor: 3
+      head: 32
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    explanation: Opponent attacked SexyBeast and dealt 0 damage
+    damageDone: 0
+    healthLeft: 63
+    equippedWeapon: 0
+    threwWeapon: 0
+    weaponUsed:
+      name: 
+      image: {fileID: 0}
+      damage: 0
+  - attacker:
+      characterName: SexyBeast
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 3
+      hair: 15
+      facialHairColor: 4
+      facialHair: 23
+      skinColor: 3
+      head: 32
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    defender:
+      characterName: Opponent
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 6
+      hair: 8
+      facialHairColor: 6
+      facialHair: 3
+      skinColor: 2
+      head: 7
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    explanation: SexyBeast attacked Opponent and dealt 0 damage
+    damageDone: 0
+    healthLeft: 38
+    equippedWeapon: 0
+    threwWeapon: 0
+    weaponUsed:
+      name: 
+      image: {fileID: 0}
+      damage: 0
+  - attacker:
+      characterName: Opponent
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 6
+      hair: 8
+      facialHairColor: 6
+      facialHair: 3
+      skinColor: 2
+      head: 7
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    defender:
+      characterName: SexyBeast
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 3
+      hair: 15
+      facialHairColor: 4
+      facialHair: 23
+      skinColor: 3
+      head: 32
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    explanation: Opponent attacked SexyBeast and dealt 12 damage
+    damageDone: 12
+    healthLeft: 51
+    equippedWeapon: 0
+    threwWeapon: 0
+    weaponUsed:
+      name: 
+      image: {fileID: 0}
+      damage: 0
+  - attacker:
+      characterName: SexyBeast
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 3
+      hair: 15
+      facialHairColor: 4
+      facialHair: 23
+      skinColor: 3
+      head: 32
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    defender:
+      characterName: Opponent
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 6
+      hair: 8
+      facialHairColor: 6
+      facialHair: 3
+      skinColor: 2
+      head: 7
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    explanation: SexyBeast attacked Opponent and dealt 13 damage
+    damageDone: 13
+    healthLeft: 25
+    equippedWeapon: 0
+    threwWeapon: 0
+    weaponUsed:
+      name: 
+      image: {fileID: 0}
+      damage: 0
+  - attacker:
+      characterName: Opponent
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 6
+      hair: 8
+      facialHairColor: 6
+      facialHair: 3
+      skinColor: 2
+      head: 7
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    defender:
+      characterName: SexyBeast
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 3
+      hair: 15
+      facialHairColor: 4
+      facialHair: 23
+      skinColor: 3
+      head: 32
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    explanation: Opponent attacked SexyBeast and dealt 13 damage
+    damageDone: 13
+    healthLeft: 38
+    equippedWeapon: 0
+    threwWeapon: 0
+    weaponUsed:
+      name: 
+      image: {fileID: 0}
+      damage: 0
+  - attacker:
+      characterName: SexyBeast
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 3
+      hair: 15
+      facialHairColor: 4
+      facialHair: 23
+      skinColor: 3
+      head: 32
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    defender:
+      characterName: Opponent
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 6
+      hair: 8
+      facialHairColor: 6
+      facialHair: 3
+      skinColor: 2
+      head: 7
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    explanation: SexyBeast attacked Opponent and dealt 13 damage
+    damageDone: 13
+    healthLeft: 12
+    equippedWeapon: 0
+    threwWeapon: 0
+    weaponUsed:
+      name: 
+      image: {fileID: 0}
+      damage: 0
+  - attacker:
+      characterName: Opponent
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 6
+      hair: 8
+      facialHairColor: 6
+      facialHair: 3
+      skinColor: 2
+      head: 7
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    defender:
+      characterName: SexyBeast
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 3
+      hair: 15
+      facialHairColor: 4
+      facialHair: 23
+      skinColor: 3
+      head: 32
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    explanation: Opponent attacked SexyBeast and dealt 8 damage
+    damageDone: 8
+    healthLeft: 30
+    equippedWeapon: 0
+    threwWeapon: 0
+    weaponUsed:
+      name: 
+      image: {fileID: 0}
+      damage: 0
+  - attacker:
+      characterName: SexyBeast
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 3
+      hair: 15
+      facialHairColor: 4
+      facialHair: 23
+      skinColor: 3
+      head: 32
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    defender:
+      characterName: Opponent
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 6
+      hair: 8
+      facialHairColor: 6
+      facialHair: 3
+      skinColor: 2
+      head: 7
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    explanation: SexyBeast attacked Opponent and dealt 0 damage
+    damageDone: 0
+    healthLeft: 12
+    equippedWeapon: 0
+    threwWeapon: 0
+    weaponUsed:
+      name: 
+      image: {fileID: 0}
+      damage: 0
+  - attacker:
+      characterName: Opponent
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 6
+      hair: 8
+      facialHairColor: 6
+      facialHair: 3
+      skinColor: 2
+      head: 7
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    defender:
+      characterName: SexyBeast
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 3
+      hair: 15
+      facialHairColor: 4
+      facialHair: 23
+      skinColor: 3
+      head: 32
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    explanation: Opponent attacked SexyBeast and dealt 0 damage
+    damageDone: 0
+    healthLeft: 30
+    equippedWeapon: 0
+    threwWeapon: 0
+    weaponUsed:
+      name: 
+      image: {fileID: 0}
+      damage: 0
+  - attacker:
+      characterName: SexyBeast
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 3
+      hair: 15
+      facialHairColor: 4
+      facialHair: 23
+      skinColor: 3
+      head: 32
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    defender:
+      characterName: Opponent
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 6
+      hair: 8
+      facialHairColor: 6
+      facialHair: 3
+      skinColor: 2
+      head: 7
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    explanation: SexyBeast attacked Opponent and dealt 0 damage
+    damageDone: 0
+    healthLeft: 12
+    equippedWeapon: 0
+    threwWeapon: 0
+    weaponUsed:
+      name: 
+      image: {fileID: 0}
+      damage: 0
+  - attacker:
+      characterName: Opponent
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 6
+      hair: 8
+      facialHairColor: 6
+      facialHair: 3
+      skinColor: 2
+      head: 7
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    defender:
+      characterName: SexyBeast
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 3
+      hair: 15
+      facialHairColor: 4
+      facialHair: 23
+      skinColor: 3
+      head: 32
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    explanation: Opponent attacked SexyBeast and dealt 8 damage
+    damageDone: 8
+    healthLeft: 22
+    equippedWeapon: 0
+    threwWeapon: 0
+    weaponUsed:
+      name: 
+      image: {fileID: 0}
+      damage: 0
+  - attacker:
+      characterName: SexyBeast
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 3
+      hair: 15
+      facialHairColor: 4
+      facialHair: 23
+      skinColor: 3
+      head: 32
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    defender:
+      characterName: Opponent
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 6
+      hair: 8
+      facialHairColor: 6
+      facialHair: 3
+      skinColor: 2
+      head: 7
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    explanation: SexyBeast attacked Opponent and dealt 10 damage
+    damageDone: 10
+    healthLeft: 2
+    equippedWeapon: 0
+    threwWeapon: 0
+    weaponUsed:
+      name: 
+      image: {fileID: 0}
+      damage: 0
+  - attacker:
+      characterName: Opponent
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 6
+      hair: 8
+      facialHairColor: 6
+      facialHair: 3
+      skinColor: 2
+      head: 7
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    defender:
+      characterName: SexyBeast
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 3
+      hair: 15
+      facialHairColor: 4
+      facialHair: 23
+      skinColor: 3
+      head: 32
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    explanation: Opponent attacked SexyBeast and dealt 11 damage
+    damageDone: 11
+    healthLeft: 11
+    equippedWeapon: 0
+    threwWeapon: 0
+    weaponUsed:
+      name: 
+      image: {fileID: 0}
+      damage: 0
+  - attacker:
+      characterName: SexyBeast
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 3
+      hair: 15
+      facialHairColor: 4
+      facialHair: 23
+      skinColor: 3
+      head: 32
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    defender:
+      characterName: Opponent
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 6
+      hair: 8
+      facialHairColor: 6
+      facialHair: 3
+      skinColor: 2
+      head: 7
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    explanation: SexyBeast attacked Opponent and dealt 0 damage
+    damageDone: 0
+    healthLeft: 2
+    equippedWeapon: 0
+    threwWeapon: 0
+    weaponUsed:
+      name: 
+      image: {fileID: 0}
+      damage: 0
+  - attacker:
+      characterName: Opponent
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 6
+      hair: 8
+      facialHairColor: 6
+      facialHair: 3
+      skinColor: 2
+      head: 7
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    defender:
+      characterName: SexyBeast
+      level: 1
+      xp: 0
+      maxHealth: 110
+      constitution: 2
+      strength: 2
+      agility: 3
+      speed: 3
+      hairColor: 3
+      hair: 15
+      facialHairColor: 4
+      facialHair: 23
+      skinColor: 3
+      head: 32
+      shieldHand: 0
+      weaponHand: 0
+      helmet: 0
+      equippedWeapon: 0
+      helmets: 
+      skills: 
+      weapons: 
+      pets: 
+    explanation: Opponent attacked SexyBeast and dealt 11 damage
+    damageDone: 11
+    healthLeft: 0
+    equippedWeapon: 0
+    threwWeapon: 0
+    weaponUsed:
+      name: 
+      image: {fileID: 0}
+      damage: 0

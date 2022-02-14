@@ -13,7 +13,7 @@ public class FightManager : MonoBehaviour
 	PlayerData player1;
 	PlayerData player2;
 
-	
+	public GameObject fightRecord;
 
 	public List<Turns> turns = new List<Turns>();
 
@@ -57,6 +57,13 @@ public class FightManager : MonoBehaviour
 
 		player1.ResetBattleStats();
 		player2.ResetBattleStats();
+
+		GameObject newFightRecord = Instantiate(fightRecord);
+
+		newFightRecord.GetComponent<FightRecord>().player1 = player1;
+		newFightRecord.GetComponent<FightRecord>().player2 = player2;
+		newFightRecord.GetComponent<FightRecord>().allTurns = turns;
+		newFightRecord.GetComponent<FightRecord>().StartRecord();
 
 	}
 

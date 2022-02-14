@@ -25,6 +25,13 @@ public class GameUI : MonoBehaviour
 	[SerializeField] private GameObject helmetButton;
 	private List<GameObject> helmetbuttons = new List<GameObject>();
 
+	[SerializeField] private Button[] allButtons;
+
+	private void Start()
+	{
+		DisableButtons();
+	}
+
 	public void UpdateUI()
 	{
 		levelText.text = player.level.ToString();
@@ -68,5 +75,21 @@ public class GameUI : MonoBehaviour
 		helmetSelector.SetActive(false);
 		player.helmet = helmetID;
 		gameManager.SavePlayer();
+	}
+
+	public void EnableButtons()
+	{
+		for (int i = 0; i < allButtons.Length; i++)
+		{
+			allButtons[i].interactable = true;
+		}
+	}
+
+	public void DisableButtons()
+	{
+		for (int i = 0; i < allButtons.Length; i++)
+		{
+			allButtons[i].interactable = false;
+		}
 	}
 }
