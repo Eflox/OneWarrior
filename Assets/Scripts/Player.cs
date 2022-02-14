@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
 	public float xp;
 	public int maxHealth;
 
-	public int vitality, strength, intellec, agility, magicka;
+	public int constitution, strength, agility, speed;
 
 	public int hairColor, hair, facialHairColor, facialHair, skinColor, head, shieldHand, weaponHand, helmet;
 
@@ -40,11 +40,10 @@ public class Player : MonoBehaviour
 		xp = data.xp;
 		maxHealth = data.maxHealth;
 
-		vitality = data.vitality;
+		constitution = data.constitution;
 		strength = data.strength;
-		intellec = data.intellec;
 		agility = data.agility;
-		magicka = data.magicka;
+		speed = data.speed;
 
 		hairColor = data.hairColor;
 		hair = data.hair;
@@ -93,8 +92,8 @@ public class Player : MonoBehaviour
 		for (int i = 0; i < 1; i++)
 		{
 			RecieveHelmet();
-			//int randomCategory = Random.Range(0, 3);
-			int randomCategory = 0;
+			int randomCategory = Random.Range(0, 2);
+			//int randomCategory = 0;
 
 			if (randomCategory == 0)
 			{
@@ -111,7 +110,17 @@ public class Player : MonoBehaviour
 			}
 			else if (randomCategory == 1)
 			{
+				int skill = Random.Range(0, 4);
+				int amountToAdd = Random.Range(4, 5);
 
+				if (skill == 0)
+					constitution += amountToAdd;
+				if (skill == 1)
+					strength += amountToAdd;
+				if (skill == 2)
+					agility += amountToAdd;
+				if (skill == 3)
+					speed += amountToAdd;
 			}
 			else if (randomCategory == 2)
 			{
@@ -133,7 +142,7 @@ public class Player : MonoBehaviour
 
 	public PlayerData ReturnDataClass()
 	{
-		return new PlayerData(characterName, level, xp, vitality, strength, intellec, agility, magicka, hairColor, hair, facialHairColor, facialHair, skinColor, head, shieldHand, weaponHand, helmet, helmets, skills, weapons, pets);
+		return new PlayerData(characterName, level, xp, constitution, strength, agility, speed, hairColor, hair, facialHairColor, facialHair, skinColor, head, shieldHand, weaponHand, helmet, helmets, skills, weapons, pets);
 	}
 
 	public void NewOpponent(PlayerData oppponent)

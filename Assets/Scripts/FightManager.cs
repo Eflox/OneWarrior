@@ -3,6 +3,8 @@
 */
 
 using UnityEngine;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class FightManager : MonoBehaviour
 {
@@ -10,7 +12,10 @@ public class FightManager : MonoBehaviour
 
 	PlayerData player1;
 	PlayerData player2;
-	//PlayerData player2 = new PlayerData("Traitor", 1, 0, 5, 1, 1, 5, 3, /* limit */ 0, 0, 0, 0, 0, 0, 0, 0, 0, null, null, null, null);
+
+	
+
+	public List<Turns> turns = new List<Turns>();
 
 	public void OrganiseFight(PlayerData _player2)
 	{
@@ -20,86 +25,118 @@ public class FightManager : MonoBehaviour
 		player1.ResetBattleStats();
 		player2.ResetBattleStats();
 
+		DontDestroyOnLoad(this);
+
+		SceneManager.LoadScene("FightScene", LoadSceneMode.Single);
+
+		turns.Clear();
+
 		Fight();
 	}
 
-	//vitality = more health
-	//strengh = more damage
-	//intellec = higher chances to attack
-	//agility = consisteny
-
 	void Fight(/*PlayerData opponent*/)
 	{
-		float averageDmgP1 = 0;
-		float averageDmgP2 = 0;
-
-
-		int hitCountP1 = 0;
-		int hitCountP2 = 0;
-
 
 		while (player1.maxHealth > 0 && player2.maxHealth > 0)
 		{
-			float attackerChance = Random.Range(0, 52);
-			attackerChance -= player1.intellec * 2;
-			attackerChance += player2.intellec * 2;
 
+			PlayerAttack(player1, player2);
 
-			//who goes first
-			if (attackerChance <= 25)
-			{
-				//player 1 attack
-				averageDmgP1 += playerAttack(player1, player2);
-				hitCountP1++;
+			if (player2.maxHealth <= 0)
+				break;
 
-				//Debug.Log("Player1 current health = " + player1.maxHealth + " - his turn to hit");
+			PlayerAttack(player2, player1);
 
-			}
-			else
-			{
-				//player 2 attack
-				averageDmgP2 += playerAttack(player2, player1);
-				hitCountP2++;
-
-				//Debug.Log("Player2 current health = " + player2.maxHealth + " - his turn to hit");
-			}
 		}
 
-		averageDmgP1 /= hitCountP1;
-		averageDmgP2 /= hitCountP2;
+		if (player2.maxHealth <= 0)
+			Debug.Log("P1 WON  -  HP left = " + player1.maxHealth);
 
 		if (player1.maxHealth <= 0)
-		{
-			Debug.Log("player2 WON!!!");
-			Debug.Log("P2 health left = " + player2.maxHealth);
-
-		}
-		else if (player2.maxHealth <= 0)
-		{
-			Debug.Log("player1 WON!!!");
-			Debug.Log("P1 health left = " + player1.maxHealth);
-		}
-
-
-		Debug.Log("P1 hit count = " + hitCountP1);
-		Debug.Log("P1 average damage = " + averageDmgP1);
-
-
-		Debug.Log("P2 hit count = " + hitCountP2);
-		Debug.Log("P2 average damage = " + averageDmgP2);
-		
+			Debug.Log("P2 WON  -  HP left = " + player2.maxHealth);
 
 		player1.ResetBattleStats();
 		player2.ResetBattleStats();
 
 	}
 
-	int playerAttack(PlayerData offencer, PlayerData defencer)
+	void PlayerAttack(PlayerData attacker, PlayerData defender)
 	{
-		int damage = offencer.strength * Random.Range(1, offencer.agility);
-		defencer.maxHealth -= damage;
+		Turns currentTurn = new Turns();
 
-		Debug.Log("Damage done = " + damage);
-		return damage;
+		currentTurn.attacker = attacker;
+		currentTurn.defender = defender;
+
+		EquipOrDequipWeapon(attacker, currentTurn);
+
+		if (CalculateHitOrMiss(attacker, defender))
+		{
+			int damage = CalculateDamage(attacker);
+			defender.maxHealth -= damage;
+
+			currentTurn.damageDone = damage;
+		}
+		currentTurn.explanation = attacker.characterName + " attacked " + defender.characterName + " and dealt " + currentTurn.damageDone + " damage";
+
+		if (attacker.equippedWeapon > 0)
+			currentTurn.weaponUsed = player.items.weapons[attacker.equippedWeapon];
+
+		currentTurn.healthLeft = defender.maxHealth;
+
+		turns.Add(currentTurn);
 	}
+
+	void EquipOrDequipWeapon(PlayerData attacker, Turns currentTurn)
+	{
+		if (attacker.equippedWeapon == 0)
+		{
+			if (Random.Range(0, 6) == 1)    //equip weapon
+			{
+				attacker.equippedWeapon = Random.Range(1, player.items.weapons.Length - 1);
+				currentTurn.equippedWeapon = true;
+			}
+		}
+		else if (Random.Range(0, 4) == 1)	//throw weapon
+		{
+			attacker.equippedWeapon = 0;
+			currentTurn.threwWeapon = true;
+		}
+
+
+	}
+
+	bool CalculateHitOrMiss(PlayerData attacker, PlayerData defencer)
+	{
+		int chanceToHit = 35;
+
+		chanceToHit += attacker.speed;
+		chanceToHit -= attacker.agility;
+
+
+		if (chanceToHit >= Random.Range(0, 50))
+			return true;
+
+		return false;
+	}
+
+	int CalculateDamage(PlayerData attacker)
+	{
+		float damage;
+
+		if (attacker.equippedWeapon > 0)
+			damage = player.items.weapons[attacker.equippedWeapon].damage;
+
+		else
+			damage = 10;	//base damage
+
+		damage += Random.Range(-3, 3);	//random modifier
+
+		for (int i = 0; i < attacker.strength; i++)
+		{
+			damage = damage + (damage * 0.1f); //increase by 10% for amount of str
+		}
+
+		return Mathf.RoundToInt(damage);
+	}
+
 }

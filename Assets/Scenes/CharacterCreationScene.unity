@@ -433,12 +433,6 @@ Transform:
   m_Father: {fileID: 695067075}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &119133377 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7105134014690831483, guid: b304621a3158c464fbb779d15ce9440d,
-    type: 3}
-  m_PrefabInstance: {fileID: 7105134014707071162}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &139347532
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,23 +672,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 185459416}
   m_CullTransparentMesh: 0
---- !u!1 &191514230 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7105134014893309644, guid: b304621a3158c464fbb779d15ce9440d,
-    type: 3}
-  m_PrefabInstance: {fileID: 7105134014707071162}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &213602796 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 424601579312392180, guid: 32020859e2da247dd890b4c152e39663,
     type: 3}
   m_PrefabInstance: {fileID: 424601579501876760}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &220271805 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7105134014788922375, guid: b304621a3158c464fbb779d15ce9440d,
-    type: 3}
-  m_PrefabInstance: {fileID: 7105134014707071162}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &228175080
 GameObject:
@@ -2175,12 +2157,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 698165267}
   m_CullTransparentMesh: 0
---- !u!1 &723480279 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7105134014355707501, guid: b304621a3158c464fbb779d15ce9440d,
-    type: 3}
-  m_PrefabInstance: {fileID: 7105134014707071162}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &724498718
 GameObject:
   m_ObjectHideFlags: 0
@@ -2379,16 +2355,16 @@ MonoBehaviour:
   items: {fileID: 244902314}
   player: {fileID: 402541127}
   vitalityBar:
-  - {fileID: 21877012}
-  - {fileID: 1883288220}
-  - {fileID: 1833015562}
-  - {fileID: 220271805}
-  - {fileID: 2002252491}
-  - {fileID: 723480279}
-  - {fileID: 826259158}
-  - {fileID: 119133377}
-  - {fileID: 191514230}
-  - {fileID: 1262764653}
+  - {fileID: 1524093317}
+  - {fileID: 40473795}
+  - {fileID: 1191649227}
+  - {fileID: 1143552522}
+  - {fileID: 980602901}
+  - {fileID: 544906502}
+  - {fileID: 1716004217}
+  - {fileID: 1849945191}
+  - {fileID: 1903962022}
+  - {fileID: 213602796}
   strengthBar:
   - {fileID: 1524093317}
   - {fileID: 40473795}
@@ -2770,12 +2746,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 782835849}
   m_CullTransparentMesh: 0
---- !u!1 &826259158 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7105134014454255212, guid: b304621a3158c464fbb779d15ce9440d,
-    type: 3}
-  m_PrefabInstance: {fileID: 7105134014707071162}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &829843745
 GameObject:
   m_ObjectHideFlags: 0
@@ -4965,12 +4935,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1260019239}
   m_CullTransparentMesh: 0
---- !u!1 &1262764653 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7105134013822319319, guid: b304621a3158c464fbb779d15ce9440d,
-    type: 3}
-  m_PrefabInstance: {fileID: 7105134014707071162}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1284019945
 GameObject:
   m_ObjectHideFlags: 0
@@ -7489,12 +7453,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 532608692532982790}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1833015562 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7105134013184565680, guid: b304621a3158c464fbb779d15ce9440d,
-    type: 3}
-  m_PrefabInstance: {fileID: 7105134014707071162}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1849945191 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 424601580940335743, guid: 32020859e2da247dd890b4c152e39663,
@@ -7657,12 +7615,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1876008032}
   m_CullTransparentMesh: 0
---- !u!1 &1883288220 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7105134013369043494, guid: b304621a3158c464fbb779d15ce9440d,
-    type: 3}
-  m_PrefabInstance: {fileID: 7105134014707071162}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1903962022 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 424601581363351998, guid: 32020859e2da247dd890b4c152e39663,
@@ -8170,12 +8122,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1982941066}
   m_CullTransparentMesh: 0
---- !u!1 &2002252491 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7105134013353757297, guid: b304621a3158c464fbb779d15ce9440d,
-    type: 3}
-  m_PrefabInstance: {fileID: 7105134014707071162}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2029836146 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5723075189827610819, guid: cd1de85dffef840759d34cf02ef3a0c2,
@@ -8756,47 +8702,47 @@ PrefabInstance:
         type: 3}
       propertyPath: vitalityBar.Array.data[1]
       value: 
-      objectReference: {fileID: 1883288220}
+      objectReference: {fileID: 0}
     - target: {fileID: 2148280922074611708, guid: 2f23aba595ee74464a211d00bf20e794,
         type: 3}
       propertyPath: vitalityBar.Array.data[2]
       value: 
-      objectReference: {fileID: 1833015562}
+      objectReference: {fileID: 0}
     - target: {fileID: 2148280922074611708, guid: 2f23aba595ee74464a211d00bf20e794,
         type: 3}
       propertyPath: vitalityBar.Array.data[3]
       value: 
-      objectReference: {fileID: 220271805}
+      objectReference: {fileID: 0}
     - target: {fileID: 2148280922074611708, guid: 2f23aba595ee74464a211d00bf20e794,
         type: 3}
       propertyPath: vitalityBar.Array.data[4]
       value: 
-      objectReference: {fileID: 2002252491}
+      objectReference: {fileID: 0}
     - target: {fileID: 2148280922074611708, guid: 2f23aba595ee74464a211d00bf20e794,
         type: 3}
       propertyPath: vitalityBar.Array.data[5]
       value: 
-      objectReference: {fileID: 723480279}
+      objectReference: {fileID: 0}
     - target: {fileID: 2148280922074611708, guid: 2f23aba595ee74464a211d00bf20e794,
         type: 3}
       propertyPath: vitalityBar.Array.data[6]
       value: 
-      objectReference: {fileID: 826259158}
+      objectReference: {fileID: 0}
     - target: {fileID: 2148280922074611708, guid: 2f23aba595ee74464a211d00bf20e794,
         type: 3}
       propertyPath: vitalityBar.Array.data[7]
       value: 
-      objectReference: {fileID: 119133377}
+      objectReference: {fileID: 0}
     - target: {fileID: 2148280922074611708, guid: 2f23aba595ee74464a211d00bf20e794,
         type: 3}
       propertyPath: vitalityBar.Array.data[8]
       value: 
-      objectReference: {fileID: 191514230}
+      objectReference: {fileID: 0}
     - target: {fileID: 2148280922074611708, guid: 2f23aba595ee74464a211d00bf20e794,
         type: 3}
       propertyPath: vitalityBar.Array.data[9]
       value: 
-      objectReference: {fileID: 1262764653}
+      objectReference: {fileID: 0}
     - target: {fileID: 2148280922074611708, guid: 2f23aba595ee74464a211d00bf20e794,
         type: 3}
       propertyPath: strengthBar.Array.data[0]

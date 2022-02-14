@@ -15,7 +15,7 @@ public class GameUI : MonoBehaviour
 	[SerializeField] private Text levelText;
 	[SerializeField] private Text nameText;
 
-	[SerializeField] private GameObject[] vitalityBar, strengthBar, intellectBar, agilityBar, magickaBar;
+	[SerializeField] private StatBarHandler statBars;
 
 	[SerializeField] GameObject[] inventoryWeapons;
 	[SerializeField] private Color normalColor;
@@ -31,7 +31,7 @@ public class GameUI : MonoBehaviour
 		nameText.text = player.characterName;
 
 		SetWeapons();
-		SetStats();
+		statBars.SetStats(player.ReturnDataClass());
 
 	}
 
@@ -41,20 +41,6 @@ public class GameUI : MonoBehaviour
 		{
 			inventoryWeapons[player.weapons[i]].GetComponent<Image>().color = normalColor;
 		}
-	}
-
-	private void SetStats()
-	{
-		for (int i = 0; i < player.vitality; i++)
-			vitalityBar[i].SetActive(true);
-		for (int i = 0; i < player.strength; i++)
-			strengthBar[i].SetActive(true);
-		for (int i = 0; i < player.intellec; i++)
-			intellectBar[i].SetActive(true);
-		for (int i = 0; i < player.agility; i++)
-			agilityBar[i].SetActive(true);
-		for (int i = 0; i < player.magicka; i++)
-			magickaBar[i].SetActive(true);
 	}
 
 	public void LoadHelmets()

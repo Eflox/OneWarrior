@@ -11,7 +11,7 @@ public class GeneratePlayer : MonoBehaviour
 
 	[SerializeField] Items items;
 
-	PlayerData player = new PlayerData("Opponent", 1, 0, 0, 0, 0, 0, 0, /* limit */ 0, 0, 0, 0, 0, 0, 0, 0, 0, null, null, null, null);
+	PlayerData player = new PlayerData("Opponent", 1, 0, 0, 0, 0, 0, /* limit */ 0, 0, 0, 0, 0, 0, 0, 0, 0, null, null, null, null);
 
 	[Header("--Visuals--")]
 	[SerializeField] private Image hairSlot, facialHairSlot, headSlot;
@@ -39,11 +39,10 @@ public class GeneratePlayer : MonoBehaviour
 	void RandomiseBaseStats()
 	{
 		player.level = 1;
-		player.vitality = 1;
+		player.constitution = 1;
 		player.strength = 1;
-		player.intellec = 1;
 		player.agility = 1;
-		player.magicka = 1;
+		player.speed = 1;
 
 
 		for (int i = 0; i < 6; i++) // temporarily 6 normally 10
@@ -51,15 +50,13 @@ public class GeneratePlayer : MonoBehaviour
 			int j = Random.Range(0, 4); //temporarily 4 as magicka is not used for the moment
 
 			if (j == 0)
-				player.vitality++;
+				player.constitution++;
 			if (j == 1)
 				player.strength++;
 			if (j == 2)
-				player.intellec++;
-			if (j == 3)
 				player.agility++;
-			if (j == 4)
-				player.magicka++;
+			if (j == 3)
+				player.speed++;
 		}
 
 		//player.maxHealth = 25 * player.vitality;
@@ -75,13 +72,6 @@ public class GeneratePlayer : MonoBehaviour
 
 		player.skinColor = Random.Range(0, items.head.Length - 1);
 		player.head = Random.Range(0, items.head[player.skinColor].Length - 1);
-
-		Debug.Log(player.hairColor);
-		Debug.Log(player.hair);
-		Debug.Log(player.facialHairColor);
-		Debug.Log(player.facialHair);
-		Debug.Log(player.head);
-
 
 	}
 
@@ -101,17 +91,13 @@ public class GeneratePlayer : MonoBehaviour
 
 	private void SetStats()
 	{
-		for (int i = 0; i < player.vitality; i++)
+		for (int i = 0; i < player.constitution; i++)
 			vitalityBar[i].SetActive(true);
 		for (int i = 0; i < player.strength; i++)
 			strengthBar[i].SetActive(true);
-		for (int i = 0; i < player.intellec; i++)
-			intellectBar[i].SetActive(true);
 		for (int i = 0; i < player.agility; i++)
+			intellectBar[i].SetActive(true);
+		for (int i = 0; i < player.speed; i++)
 			agilityBar[i].SetActive(true);
-		for (int i = 0; i < player.magicka; i++)
-			magickaBar[i].SetActive(true);
 	}
-
-
 }
