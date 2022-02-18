@@ -1,25 +1,25 @@
 ﻿<Properties StartupConfiguration="{2D684ECF-783E-AF77-7A10-B0DDAE811F2E}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/FightSceneManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/FightSceneManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/FightManager.cs" Line="62" Column="1" />
-      <File FileName="Assets/Fight.cs" Line="20" Column="3" />
-      <File FileName="Assets/Scripts/PlayfabManager.cs" Line="40" Column="1" />
-      <File FileName="Assets/Scripts/GameUI.cs" Line="31" Column="3" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="70" Column="22" />
-      <File FileName="Assets/Scripts/Player.cs" Line="29" Column="133" />
-      <File FileName="Assets/FightSceneManager.cs" Line="68" Column="3" />
-      <File FileName="Assets/FightPlayer.cs" Line="4" Column="1" />
+      <File FileName="Assets/Scripts/GameUI.cs" Line="33" Column="3" IsPinned="True" />
+      <File FileName="Assets/Scripts/PlayfabManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="51" Column="1" />
+      <File FileName="Assets/Scripts/Player.cs" />
+      <File FileName="Assets/Scripts/Weapon.cs" />
+      <File FileName="Assets/Scripts/FightSceneManager.cs" Line="116" Column="5" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="OneWarrior" expanded="True">
             <Node name="Assets" expanded="True">
+              <Node name="Editors" expanded="True" />
               <Node name="PlayFabSDK" expanded="True">
                 <Node name="Client" expanded="True" />
               </Node>
-              <Node name="Scripts" expanded="True" />
-              <Node name="FightSceneManager.cs" selected="True" />
+              <Node name="Scripts" expanded="True">
+                <Node name="FightSceneManager.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>
@@ -28,7 +28,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="7078a290-a224-46de-b06c-1750e533a209" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="bcfe9489-84e9-49a9-85ae-6f0382ac7b35" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

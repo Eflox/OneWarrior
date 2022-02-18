@@ -1520,117 +1520,181 @@ MonoBehaviour:
   - {fileID: 4186834793823654260, guid: 47a9c8a8f1e992e4bb67ba66a35d4954, type: 3}
   DescriptionWeapon: Weapon classes.
   weapons:
-  - name: Butcher Knife
+  - ID: 0
+    name: Butcher Knife
     image: {fileID: 5782959423770833441, guid: e3c09a53e209acd4fa4176fa5568c13d, type: 3}
     damage: 3
-  - name: Double Sided Axe
+    animation: {fileID: 0}
+  - ID: 1
+    name: Double Sided Axe
     image: {fileID: -5154058486323072392, guid: e3c09a53e209acd4fa4176fa5568c13d,
       type: 3}
     damage: 10
-  - name: Primitive Axe
+    animation: {fileID: 7400000, guid: b49655de7211a4d6eae3e2c818b3d2f7, type: 2}
+  - ID: 2
+    name: Primitive Axe
     image: {fileID: -9070789946076908238, guid: e3c09a53e209acd4fa4176fa5568c13d,
       type: 3}
     damage: 2
-  - name: Sword
+    animation: {fileID: 0}
+  - ID: 3
+    name: Sword
     image: {fileID: -1684014682726318219, guid: fbe76618a86e9b345af9c11b2f1cc3e7,
       type: 3}
     damage: 8
-  - name: Crusher Axe
+    animation: {fileID: 0}
+  - ID: 4
+    name: Crusher Axe
     image: {fileID: -2806786948604902080, guid: e3c09a53e209acd4fa4176fa5568c13d,
       type: 3}
     damage: 9
-  - name: Falchion
+    animation: {fileID: 0}
+  - ID: 5
+    name: Falchion
     image: {fileID: -4182997923276083822, guid: fbe76618a86e9b345af9c11b2f1cc3e7,
       type: 3}
     damage: 8
-  - name: Curved Sword
+    animation: {fileID: 0}
+  - ID: 6
+    name: Curved Sword
     image: {fileID: 2438468892013752432, guid: fbe76618a86e9b345af9c11b2f1cc3e7, type: 3}
     damage: 13
-  - name: Halbert Axe
+    animation: {fileID: 0}
+  - ID: 7
+    name: Halbert Axe
     image: {fileID: 6111136557012338302, guid: 72c726e3f2060ea4193df40ec236c4b2, type: 3}
     damage: 12
-  - name: Scythe
+    animation: {fileID: 0}
+  - ID: 8
+    name: Scythe
     image: {fileID: 3619066263350028134, guid: 72c726e3f2060ea4193df40ec236c4b2, type: 3}
     damage: 20
-  - name: Club
+    animation: {fileID: 0}
+  - ID: 9
+    name: Club
     image: {fileID: -5105798899372768257, guid: 72c726e3f2060ea4193df40ec236c4b2,
       type: 3}
     damage: 6
-  - name: Great Double Axe
+    animation: {fileID: 0}
+  - ID: 10
+    name: Great Double Axe
     image: {fileID: -7209587039614130495, guid: 995e670ef7e29b84587984d990ee2f74,
       type: 3}
     damage: 25
-  - name: Barbarian Axe
+    animation: {fileID: 0}
+  - ID: 11
+    name: Barbarian Axe
     image: {fileID: -1672228898257813598, guid: 995e670ef7e29b84587984d990ee2f74,
       type: 3}
     damage: 18
-  - name: Great Axe
+    animation: {fileID: 0}
+  - ID: 12
+    name: Great Axe
     image: {fileID: -8429817422536696402, guid: 995e670ef7e29b84587984d990ee2f74,
       type: 3}
     damage: 19
-  - name: Blunt Hammer
+    animation: {fileID: 0}
+  - ID: 13
+    name: Blunt Hammer
     image: {fileID: -1837174487560255496, guid: 08823ee942be30c40b83838fa7aa20d0,
       type: 3}
     damage: 30
-  - name: Flail
+    animation: {fileID: 0}
+  - ID: 14
+    name: Flail
     image: {fileID: 4097290759859280361, guid: 08823ee942be30c40b83838fa7aa20d0, type: 3}
     damage: 15
-  - name: Small Dagger
+    animation: {fileID: 0}
+  - ID: 15
+    name: Small Dagger
     image: {fileID: 1872732258777413398, guid: 85b2c6dc4ebf9164cbb036979b2a7571, type: 3}
     damage: 3
-  - name: Barbarian Dagger
+    animation: {fileID: 0}
+  - ID: 16
+    name: Barbarian Dagger
     image: {fileID: 6313684218387091634, guid: 85b2c6dc4ebf9164cbb036979b2a7571, type: 3}
     damage: 5
-  - name: Polearm
+    animation: {fileID: 0}
+  - ID: 17
+    name: Polearm
     image: {fileID: -1562406074722904994, guid: 72c726e3f2060ea4193df40ec236c4b2,
       type: 3}
     damage: 14
-  - name: Long Bow
+    animation: {fileID: 0}
+  - ID: 18
+    name: Long Bow
     image: {fileID: -6373757434741629751, guid: 10e77d711a4372a4b8679362511b9d01,
       type: 3}
     damage: 13
-  - name: Bone Bow
+    animation: {fileID: 0}
+  - ID: 19
+    name: Bone Bow
     image: {fileID: -4041009300170039426, guid: 10e77d711a4372a4b8679362511b9d01,
       type: 3}
     damage: 17
-  - name: Crossbow
+    animation: {fileID: 0}
+  - ID: 20
+    name: Crossbow
     image: {fileID: 2594179332509777445, guid: 49f0b3fca3310ac48b10469f73d811f7, type: 3}
     damage: 35
-  - name: Stick Sling
+    animation: {fileID: 0}
+  - ID: 21
+    name: Stick Sling
     image: {fileID: -3220822396533985652, guid: 65ca9a07d8403b8449e35971e6ac1d95,
       type: 3}
     damage: 3
-  - name: Ice Staff
+    animation: {fileID: 0}
+  - ID: 22
+    name: Ice Staff
     image: {fileID: -5278209679091635917, guid: 48573bf416a19fd4ba7e3611745c3be4,
       type: 3}
     damage: 13
-  - name: Ruby Staff
+    animation: {fileID: 0}
+  - ID: 23
+    name: Ruby Staff
     image: {fileID: 65758901252837535, guid: 48573bf416a19fd4ba7e3611745c3be4, type: 3}
     damage: 9
-  - name: Undead Deer Staff
+    animation: {fileID: 0}
+  - ID: 24
+    name: Undead Deer Staff
     image: {fileID: -3860216897601182063, guid: 48573bf416a19fd4ba7e3611745c3be4,
       type: 3}
     damage: 30
-  - name: Undead Staff
+    animation: {fileID: 0}
+  - ID: 25
+    name: Undead Staff
     image: {fileID: -4945005021801345639, guid: 48573bf416a19fd4ba7e3611745c3be4,
       type: 3}
     damage: 50
-  - name: Stick
+    animation: {fileID: 0}
+  - ID: 26
+    name: Stick
     image: {fileID: 5711239250211702358, guid: 72c726e3f2060ea4193df40ec236c4b2, type: 3}
     damage: 2
-  - name: Royal Falchion
+    animation: {fileID: 0}
+  - ID: 27
+    name: Royal Falchion
     image: {fileID: 2591890647126183568, guid: fbe76618a86e9b345af9c11b2f1cc3e7, type: 3}
     damage: 15
-  - name: Great Butcher Sword
+    animation: {fileID: 0}
+  - ID: 28
+    name: Great Butcher Sword
     image: {fileID: 737682689683996588, guid: fbe76618a86e9b345af9c11b2f1cc3e7, type: 3}
     damage: 30
-  - name: Skewer
+    animation: {fileID: 0}
+  - ID: 29
+    name: Skewer
     image: {fileID: 8924780741776913506, guid: 85b2c6dc4ebf9164cbb036979b2a7571, type: 3}
     damage: 4
-  - name: Stone
+    animation: {fileID: 0}
+  - ID: 30
+    name: Stone
     image: {fileID: -1967683421625087627, guid: d80b30ce05751c2488c088575a96db64,
       type: 3}
     damage: 1
-  - name: Lance
+    animation: {fileID: 0}
+  - ID: 31
+    name: Lance
     image: {fileID: 6170961552650927921, guid: 72c726e3f2060ea4193df40ec236c4b2, type: 3}
     damage: 23
+    animation: {fileID: 0}

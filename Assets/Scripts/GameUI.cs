@@ -12,6 +12,8 @@ public class GameUI : MonoBehaviour
 	public GameManager gameManager;
 	public Items items;
 
+
+	[SerializeField] GameObject connectingScreen;
 	[SerializeField] private Text levelText;
 	[SerializeField] private Text nameText;
 
@@ -29,7 +31,9 @@ public class GameUI : MonoBehaviour
 
 	private void Start()
 	{
+		connectingScreen.SetActive(true);
 		DisableButtons();
+		
 	}
 
 	public void UpdateUI()
@@ -91,5 +95,10 @@ public class GameUI : MonoBehaviour
 		{
 			allButtons[i].interactable = false;
 		}
+	}
+
+	public void RemoveConnectScreen()
+	{
+		connectingScreen.SetActive(false);
 	}
 }

@@ -64,12 +64,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\FightPlayer.cs" />
-    <Compile Include="Assets\FightRecord.cs" />
-    <Compile Include="Assets\FightSceneManager.cs" />
+    <Compile Include="Assets\Editors\AnimationHierarchyEditor.cs" />
     <Compile Include="Assets\Scripts\ButtonID.cs" />
     <Compile Include="Assets\Scripts\CharacterCustomizer.cs" />
     <Compile Include="Assets\Scripts\FightManager.cs" />
+    <Compile Include="Assets\Scripts\FightPlayer.cs" />
+    <Compile Include="Assets\Scripts\FightRecord.cs" />
+    <Compile Include="Assets\Scripts\FightSceneManager.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GameUI.cs" />
     <Compile Include="Assets\Scripts\GeneratePlayer.cs" />
@@ -79,9 +80,9 @@
     <Compile Include="Assets\Scripts\PlayerData.cs" />
     <Compile Include="Assets\Scripts\PlayfabManager.cs" />
     <Compile Include="Assets\Scripts\SaveSystem.cs" />
+    <Compile Include="Assets\Scripts\StatBarHandler.cs" />
     <Compile Include="Assets\Scripts\Turns.cs" />
     <Compile Include="Assets\Scripts\Weapon.cs" />
-    <Compile Include="Assets\StatBarHandler.cs" />
     <None Include="Assets\Wooden_UI\Elven_Land_Game_Battle_Backgrounds\TXT\license.txt" />
     <None Include="Assets\Wooden_UI\Elven_Land_Game_Battle_Backgrounds\TXT\readme.txt" />
     <Reference Include="UnityEngine">
