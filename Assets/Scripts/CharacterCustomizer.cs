@@ -16,17 +16,16 @@ namespace OneWarriorCharacterCreation
 	{
 		[SerializeField] private Items items;
 		[SerializeField] private Player player;
-
-		[SerializeField] private GameObject[] vitalityBar, strengthBar, intellectBar, agilityBar, magickaBar;
-
 		[SerializeField] private InputField nameField;
 		[SerializeField] private Button createButton;
+
+		[SerializeField] private StatBarHandler statBars;
 
 		private void Start()
 		{
 			nameField.onValueChanged.AddListener(delegate { WroteName(); });
 			SetDefault();
-			SetStats();
+			NewStats();
 		}
 
 		void WroteName()
@@ -138,32 +137,6 @@ namespace OneWarriorCharacterCreation
 			Debug.Log(error.GenerateErrorReport());
 		}
 
-		private void ResetStats()
-		{
-			for (int i = 0; i < vitalityBar.Length; i++)
-				vitalityBar[i].SetActive(false);
-			for (int i = 0; i < vitalityBar.Length; i++)
-				strengthBar[i].SetActive(false);
-			for (int i = 0; i < vitalityBar.Length; i++)
-				intellectBar[i].SetActive(false);
-			for (int i = 0; i < vitalityBar.Length; i++)
-				agilityBar[i].SetActive(false);
-			for (int i = 0; i < vitalityBar.Length; i++)
-				magickaBar[i].SetActive(false);
-		}
-
-		private void SetStats()
-		{
-			for (int i = 0; i < player.constitution; i++)
-				vitalityBar[i].SetActive(true);
-			for (int i = 0; i < player.strength; i++)
-				strengthBar[i].SetActive(true);
-			for (int i = 0; i < player.agility; i++)
-				intellectBar[i].SetActive(true);
-			for (int i = 0; i < player.speed; i++)
-				agilityBar[i].SetActive(true);
-		}
-
 		private void NewStats()
 		{
 			player.level = 1;
@@ -187,8 +160,7 @@ namespace OneWarriorCharacterCreation
 					player.speed++;
 			}
 
-			ResetStats();
-			SetStats();
+			statBars.SetStats(player.ReturnDataClass());
 		}
 	}
 }

@@ -38,6 +38,8 @@ public class GameUI : MonoBehaviour
 
 	public void UpdateUI()
 	{
+
+		Debug.Log("UI Updated");
 		levelText.text = player.level.ToString();
 		nameText.text = player.characterName;
 

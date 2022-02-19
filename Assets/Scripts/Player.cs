@@ -65,13 +65,13 @@ public class Player : MonoBehaviour
 
 	public void LoadVisuals()
 	{
-		hairSlot.transform.position = new Vector3(hairSlot.transform.position.x, originalYTMP, 0);
+		//hairSlot.transform.position = new Vector3(hairSlot.transform.position.x, originalYTMP, 0);
 
 		if (helmet > 0)
 		{
 			hairSlot.sprite = items.helmets[helmet];
 			//facialHairSlot.sprite = null;
-			hairSlot.transform.position = new Vector3(hairSlot.transform.position.x, hairSlot.transform.position.y + 0.02f, 0);
+			//hairSlot.transform.position = new Vector3(hairSlot.transform.position.x, hairSlot.transform.position.y + 0.02f, 0);
 		}
 		else
 		{

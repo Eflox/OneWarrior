@@ -78,6 +78,8 @@
     <Compile Include="Assets\Scripts\MenuUI.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\PlayerData.cs" />
+    <Compile Include="Assets\Scripts\PlayerEquipper.cs" />
+    <Compile Include="Assets\Scripts\PlayerMechanics.cs" />
     <Compile Include="Assets\Scripts\PlayfabManager.cs" />
     <Compile Include="Assets\Scripts\SaveSystem.cs" />
     <Compile Include="Assets\Scripts\StatBarHandler.cs" />

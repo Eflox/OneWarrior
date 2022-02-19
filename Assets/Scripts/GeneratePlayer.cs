@@ -15,7 +15,7 @@ public class GeneratePlayer : MonoBehaviour
 
 	[Header("--Visuals--")]
 	[SerializeField] private Image hairSlot, facialHairSlot, headSlot;
-	[SerializeField] private GameObject[] vitalityBar, strengthBar, intellectBar, agilityBar, magickaBar;
+	[SerializeField] private StatBarHandler statBars;
 	[SerializeField] private Text nameTag;
 	[SerializeField] private Button challengeButton;
 
@@ -91,13 +91,6 @@ public class GeneratePlayer : MonoBehaviour
 
 	private void SetStats()
 	{
-		for (int i = 0; i < player.constitution; i++)
-			vitalityBar[i].SetActive(true);
-		for (int i = 0; i < player.strength; i++)
-			strengthBar[i].SetActive(true);
-		for (int i = 0; i < player.agility; i++)
-			intellectBar[i].SetActive(true);
-		for (int i = 0; i < player.speed; i++)
-			agilityBar[i].SetActive(true);
+		statBars.SetStats(player);
 	}
 }
