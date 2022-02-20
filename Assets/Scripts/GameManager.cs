@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-	public Player player;
+	public PlayerManager playerManager;
 	public PlayfabManager playfabManager;
 	public GameUI UI;
 	public Items items;
@@ -18,14 +18,11 @@ public class GameManager : MonoBehaviour
 	private void SetupScripts()
 	{
 		playfabManager.gameManager = this;
-		playfabManager.player = player;
 
-		player.gameManager = this;
-		player.items = items;
+		playerManager.gameManager = this;
+		playerManager.items = items;
 
 		UI.gameManager = this;
-		UI.player = player;
-		UI.items = items;
 	}
 
 	private void Start()
@@ -65,16 +62,17 @@ public class GameManager : MonoBehaviour
 		playfabManager.LoadPlayer();
 	}
 
-	public void PlayerHasBeenLoaded()		//Only updates the UI once all of the above is done eg. logged in and player loaded
+	public void PlayerHasBeenLoaded(PlayerData _playerData)		//Only updates the UI once all of the above is done eg. logged in and player loaded
 	{
+		playerManager.LoadPlayer(_playerData);
 		UI.RemoveConnectScreen();
-		UI.EnableButtons();
-		UI.UpdateUI();
+		//UI.EnableButtons();
+		UI.UpdateUI(_playerData);
 	}
 
-	public void SavePlayer()
+	public void SavePlayer(PlayerData playerData)
 	{
-		playfabManager.SavePlayer();
+		playfabManager.SavePlayer(playerData);
 	}
 
 	public void LoadPlayer()
@@ -85,7 +83,7 @@ public class GameManager : MonoBehaviour
 	public void PlayerHasBeenSaved()		//Updates the UI once the save confirmation is received
 	{
 		LoadPlayer();
-		UI.UpdateUI();
+		UI.UpdateUI(playerManager.ReturnDataClass());
 	}
 
 	public void DeletePlayerData()

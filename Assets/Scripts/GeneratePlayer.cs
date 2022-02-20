@@ -7,8 +7,6 @@ using UnityEngine.UI;
 
 public class GeneratePlayer : MonoBehaviour
 {
-	public Player mainPlayer;
-
 	[SerializeField] Items items;
 
 	PlayerData player = new PlayerData("Opponent", 1, 0, 0, 0, 0, 0, /* limit */ 0, 0, 0, 0, 0, 0, 0, 0, 0, null, null, null, null);
@@ -22,18 +20,11 @@ public class GeneratePlayer : MonoBehaviour
 
 	private void Start()
 	{
-		mainPlayer = GameObject.Find("_PLAYER_").GetComponent<Player>();
+		//mainPlayer = GameObject.Find("_PLAYER_").GetComponent<Player>();
 
 		RandomiseBaseStats();
 		RandomAppearanceStats();
 		SetVisuals();
-
-		challengeButton.onClick.AddListener(OnChallenged);
-	}
-
-	void OnChallenged()
-	{
-		mainPlayer.NewOpponent(player);
 	}
 
 	void RandomiseBaseStats()

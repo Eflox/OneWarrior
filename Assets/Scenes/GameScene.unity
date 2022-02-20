@@ -9494,7 +9494,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77ad8458236d94e48841cf0c10dc6913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   gameManager: {fileID: 0}
 --- !u!4 &679608292
 Transform:
@@ -10662,10 +10661,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44389fabd356c45a89b0ed73ade28eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1209563485}
   gameManager: {fileID: 0}
-  items: {fileID: 0}
-  connectingScreen: {fileID: 2045257110}
   levelText: {fileID: 745629631}
   nameText: {fileID: 1966819286}
   statBars: {fileID: 1856065442}
@@ -10702,6 +10698,7 @@ MonoBehaviour:
   - {fileID: 1128887438}
   - {fileID: 456746604}
   - {fileID: 797817472}
+  connectingScreen: {fileID: 2045257110}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   shadedColor: {r: 0, g: 0, b: 0, a: 0.36862746}
   helmetSelector: {fileID: 159813415}
@@ -17862,10 +17859,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1121143663, guid: 2f23aba595ee74464a211d00bf20e794, type: 3}
-      propertyPath: fightManager
-      value: 
-      objectReference: {fileID: 1496088354}
     - target: {fileID: 2148280922074611707, guid: 2f23aba595ee74464a211d00bf20e794,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17926,56 +17919,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: _PLAYER_
       objectReference: {fileID: 0}
-    - target: {fileID: 4096352445358326602, guid: 2f23aba595ee74464a211d00bf20e794,
-        type: 3}
-      propertyPath: m_Name
-      value: Body
-      objectReference: {fileID: 0}
-    - target: {fileID: 6609159047337527148, guid: 2f23aba595ee74464a211d00bf20e794,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6609159047337527148, guid: 2f23aba595ee74464a211d00bf20e794,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.13006
-      objectReference: {fileID: 0}
-    - target: {fileID: 6609159047337527151, guid: 2f23aba595ee74464a211d00bf20e794,
-        type: 3}
-      propertyPath: m_Name
-      value: WeaponHand
-      objectReference: {fileID: 0}
-    - target: {fileID: 6609159047415062464, guid: 2f23aba595ee74464a211d00bf20e794,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6609159047415062466, guid: 2f23aba595ee74464a211d00bf20e794,
-        type: 3}
-      propertyPath: m_Name
-      value: Hair
-      objectReference: {fileID: 0}
-    - target: {fileID: 6609159047415062467, guid: 2f23aba595ee74464a211d00bf20e794,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6609159048025082862, guid: 2f23aba595ee74464a211d00bf20e794,
-        type: 3}
-      propertyPath: m_Name
-      value: Head
-      objectReference: {fileID: 0}
-    - target: {fileID: 6609159048182996657, guid: 2f23aba595ee74464a211d00bf20e794,
-        type: 3}
-      propertyPath: m_Name
-      value: ShieldHand
-      objectReference: {fileID: 0}
-    - target: {fileID: 9062563215205964165, guid: 2f23aba595ee74464a211d00bf20e794,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 6303b35ddb45844b98a2048f516be079, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f23aba595ee74464a211d00bf20e794, type: 3}
 --- !u!1 &1043820294 stripped
@@ -18104,17 +18047,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1209563485}
         m_MethodName: LevelUp
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 818821688}
-        m_MethodName: UpdateUI
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19185,7 +19117,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 800, y: 200}
+  m_SizeDelta: {x: 700.9, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1218098521
 MonoBehaviour:
@@ -19210,7 +19142,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 183ee822f402a4e879d2765bc74f7c8a, type: 3}
     m_FontSize: 105
     m_FontStyle: 1
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 105
     m_Alignment: 4
@@ -31051,7 +30983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d9d8765075ab4fcb9f60ce76d0d4ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1209563485}
+  playerManager: {fileID: 1209563485}
   playfabManager: {fileID: 679608291}
   UI: {fileID: 818821688}
   items: {fileID: 1073582993}
@@ -31340,6 +31272,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2045257111}
+  - component: {fileID: 2045257112}
   m_Layer: 5
   m_Name: ConnectingScreen
   m_TagString: Untagged
@@ -31369,6 +31302,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2045257112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045257110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8da73dd63d7404266b7800c2cd1dc6dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 5
+  text: {fileID: 1218098521}
 --- !u!1 &2051331408
 GameObject:
   m_ObjectHideFlags: 0

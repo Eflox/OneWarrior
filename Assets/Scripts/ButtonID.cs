@@ -17,6 +17,6 @@ public class ButtonID : MonoBehaviour
 
 	void HelmetSelected()
 	{
-		UI.HelmetSelected(ID);
+		//UI.HelmetSelected(ID);
 	}
 }

@@ -2177,6 +2177,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 717739481}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &355754579 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6609159048025082863, guid: 2f23aba595ee74464a211d00bf20e794,
+    type: 3}
+  m_PrefabInstance: {fileID: 2148280921533548271}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &361290936
 GameObject:
   m_ObjectHideFlags: 0
@@ -2984,6 +2990,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 669446816}
   m_CullTransparentMesh: 0
+--- !u!212 &675465608 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2148280920923138357, guid: 2f23aba595ee74464a211d00bf20e794,
+    type: 3}
+  m_PrefabInstance: {fileID: 2148280921533548271}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &695067074
 GameObject:
   m_ObjectHideFlags: 0
@@ -4349,7 +4361,7 @@ RectTransform:
   - {fileID: 1817832870}
   - {fileID: 1431429713}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4369,7 +4381,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items: {fileID: 244902314}
-  player: {fileID: 402541127}
+  playerManager: {fileID: 402541127}
+  playerData:
+    characterName: 
+    level: 0
+    xp: 0
+    maxHealth: 0
+    constitution: 0
+    strength: 0
+    agility: 0
+    speed: 0
+    hairColor: 0
+    hair: 0
+    facialHairColor: 0
+    facialHair: 0
+    skinColor: 0
+    head: 0
+    shieldHand: 0
+    weaponHand: 0
+    helmet: 0
+    equippedWeapon: 0
+    helmets: 
+    skills: 
+    weapons: 
+    pets: 
   nameField: {fileID: 1817832871}
   createButton: {fileID: 1076177731}
   statBars: {fileID: 1431429714}
@@ -4624,6 +4659,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1967927106481788952, guid: f1a1e4c79bde143a29cb3cc2a570fd7e,
     type: 3}
   m_PrefabInstance: {fileID: 2130459198}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &805646475 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6609159047337527149, guid: 2f23aba595ee74464a211d00bf20e794,
+    type: 3}
+  m_PrefabInstance: {fileID: 2148280921533548271}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &822614639 stripped
 GameObject:
@@ -6369,7 +6410,7 @@ Transform:
   - {fileID: 758029882}
   - {fileID: 695067075}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1207189520 stripped
 GameObject:
@@ -6525,6 +6566,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3776757870055606893, guid: f1a1e4c79bde143a29cb3cc2a570fd7e,
     type: 3}
   m_PrefabInstance: {fileID: 211411163}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1259091895 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6609159047415062467, guid: 2f23aba595ee74464a211d00bf20e794,
+    type: 3}
+  m_PrefabInstance: {fileID: 2148280921533548271}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1260019239
 GameObject:
@@ -7129,6 +7176,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1260092871787817324, guid: f1a1e4c79bde143a29cb3cc2a570fd7e,
     type: 3}
   m_PrefabInstance: {fileID: 2096296279}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1415135325 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6609159048182996671, guid: 2f23aba595ee74464a211d00bf20e794,
+    type: 3}
+  m_PrefabInstance: {fileID: 2148280921533548271}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1419542534 stripped
 GameObject:
@@ -12148,6 +12201,34 @@ PrefabInstance:
       propertyPath: items
       value: 
       objectReference: {fileID: 244902314}
+    - target: {fileID: 1121143663, guid: 2f23aba595ee74464a211d00bf20e794, type: 3}
+      propertyPath: Equipper
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121143663, guid: 2f23aba595ee74464a211d00bf20e794, type: 3}
+      propertyPath: Mechanics
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1226771162, guid: 2f23aba595ee74464a211d00bf20e794, type: 3}
+      propertyPath: hairSlot
+      value: 
+      objectReference: {fileID: 1259091895}
+    - target: {fileID: 1226771162, guid: 2f23aba595ee74464a211d00bf20e794, type: 3}
+      propertyPath: facialHairSlot
+      value: 
+      objectReference: {fileID: 675465608}
+    - target: {fileID: 1226771162, guid: 2f23aba595ee74464a211d00bf20e794, type: 3}
+      propertyPath: headSlot
+      value: 
+      objectReference: {fileID: 355754579}
+    - target: {fileID: 1226771162, guid: 2f23aba595ee74464a211d00bf20e794, type: 3}
+      propertyPath: shieldHandSlot
+      value: 
+      objectReference: {fileID: 1415135325}
+    - target: {fileID: 1226771162, guid: 2f23aba595ee74464a211d00bf20e794, type: 3}
+      propertyPath: weaponHandSlot
+      value: 
+      objectReference: {fileID: 805646475}
     - target: {fileID: 2148280922074611707, guid: 2f23aba595ee74464a211d00bf20e794,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12555,7 +12636,7 @@ PrefabInstance:
     - target: {fileID: 5717284322740879329, guid: 89b054946f1754577900e7117db60771,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5717284322740879329, guid: 89b054946f1754577900e7117db60771,
         type: 3}

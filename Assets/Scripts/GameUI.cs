@@ -8,21 +8,24 @@ using UnityEngine.UI;
 
 public class GameUI : MonoBehaviour
 {
-	public Player player;
-	public GameManager gameManager;
-	public Items items;
+	[Header("Main")]
+	[SerializeField] public GameManager gameManager;
 
 
-	[SerializeField] GameObject connectingScreen;
+	[Header("Player")]
 	[SerializeField] private Text levelText;
 	[SerializeField] private Text nameText;
-
 	[SerializeField] private StatBarHandler statBars;
-
 	[SerializeField] GameObject[] inventoryWeapons;
+
+	[Header("Connecting Screen")]
+	[SerializeField] GameObject connectingScreen;
+
+	[Header("Options")]
 	[SerializeField] private Color normalColor;
 	[SerializeField] private Color shadedColor;
 
+	[Header("Helmet")]
 	[SerializeField] private GameObject helmetSelector;
 	[SerializeField] private GameObject helmetButton;
 	private List<GameObject> helmetbuttons = new List<GameObject>();
@@ -32,46 +35,46 @@ public class GameUI : MonoBehaviour
 	private void Start()
 	{
 		connectingScreen.SetActive(true);
-		DisableButtons();
+		//DisableButtons();
 		
 	}
 
-	public void UpdateUI()
+	public void UpdateUI(PlayerData playerData)
 	{
 
 		Debug.Log("UI Updated");
-		levelText.text = player.level.ToString();
-		nameText.text = player.characterName;
+		levelText.text = playerData.level.ToString();
+		nameText.text = playerData.characterName;
 
-		SetWeapons();
-		statBars.SetStats(player.ReturnDataClass());
+		SetWeapons(playerData);
+		statBars.SetStats(playerData);
 
 	}
 
-	private void SetWeapons()
+	private void SetWeapons(PlayerData playerData)
 	{
-		for (int i = 0; i < player.weapons.Count; i++)
+		for (int i = 0; i < playerData.weapons.Count; i++)
 		{
-			inventoryWeapons[player.weapons[i]].GetComponent<Image>().color = normalColor;
+			inventoryWeapons[playerData.weapons[i]].GetComponent<Image>().color = normalColor;
 		}
 	}
 
-	public void LoadHelmets()
+	public void LoadHelmets(PlayerData playerData)
 	{
 		helmetSelector.SetActive(true);
-		for (int i = 0; i < player.helmets.Count; i++)
+		for (int i = 0; i < playerData.helmets.Count; i++)
 		{
 			GameObject tmpButton = Instantiate(helmetButton) as GameObject;
 			
-			tmpButton.GetComponent<ButtonID>().ID = player.helmets[i];
-			tmpButton.GetComponentInChildren<Image>().sprite = player.items.helmets[player.helmets[i]];
+			tmpButton.GetComponent<ButtonID>().ID = playerData.helmets[i];
+			tmpButton.GetComponentInChildren<Image>().sprite = gameManager.items.helmets[playerData.helmets[i]];
 			tmpButton.GetComponent<ButtonID>().UI = this;
 			tmpButton.transform.SetParent(helmetSelector.transform);
 
 			helmetbuttons.Add(tmpButton);
 		}
 	}
-
+	/*
 	public void HelmetSelected(int helmetID)
 	{
 		foreach (var helmet in helmetbuttons)
@@ -98,6 +101,7 @@ public class GameUI : MonoBehaviour
 			allButtons[i].interactable = false;
 		}
 	}
+	*/
 
 	public void RemoveConnectScreen()
 	{

@@ -10,7 +10,6 @@ using Newtonsoft.Json;
 
 public class PlayfabManager : MonoBehaviour
 {
-	[SerializeField] public Player player;
 	[SerializeField] public GameManager gameManager;
 
 	public void Login()
@@ -37,20 +36,19 @@ public class PlayfabManager : MonoBehaviour
 
 	void OnDataRecieved(GetUserDataResult result)
 	{
-		player = GameObject.Find("_PLAYER_").GetComponent<Player>();
 		Debug.Log("Data recieved!");
 		if (result.Data != null && result.Data.ContainsKey("PlayerData"))
 		{
-			List <PlayerData> players = JsonConvert.DeserializeObject<List<PlayerData>>(result.Data["PlayerData"].Value);
-			player.LoadPlayer(players[0]);
+			List <PlayerData> playerData = JsonConvert.DeserializeObject<List<PlayerData>>(result.Data["PlayerData"].Value);
+			gameManager.PlayerHasBeenLoaded(playerData[0]);
 		}
-		gameManager.PlayerHasBeenLoaded();
+		
 	}
 
-	public void SavePlayer()	//Saves the player data to playfab servers
+	public void SavePlayer(PlayerData playerData)	//Saves the player data to playfab servers
 	{
 		List<PlayerData> players = new List<PlayerData>();
-		players.Add(player.ReturnDataClass());
+		players.Add(playerData);
 
 		var request = new UpdateUserDataRequest
 		{
