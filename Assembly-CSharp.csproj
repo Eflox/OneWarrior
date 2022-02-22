@@ -65,6 +65,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Editors\AnimationHierarchyEditor.cs" />
+    <Compile Include="Assets\FightUI.cs" />
+    <Compile Include="Assets\PlayerBanner.cs" />
     <Compile Include="Assets\ScreenConnector.cs" />
     <Compile Include="Assets\Scripts\Arena Scripts\FightManager.cs" />
     <Compile Include="Assets\Scripts\Arena Scripts\FightPlayer.cs" />

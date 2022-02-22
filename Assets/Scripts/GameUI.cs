@@ -20,6 +20,11 @@ public class GameUI : MonoBehaviour
 
 	[Header("Connecting Screen")]
 	[SerializeField] GameObject connectingScreen;
+	[SerializeField] private InputField emailInput;
+	[SerializeField] private InputField passwordInput;
+	[SerializeField] private Text messageText;
+
+	
 
 	[Header("Options")]
 	[SerializeField] private Color normalColor;
@@ -32,9 +37,12 @@ public class GameUI : MonoBehaviour
 
 	[SerializeField] private Button[] allButtons;
 
-	private void Start()
+	public void SetupUI()
 	{
-		connectingScreen.SetActive(true);
+		if (!gameManager.IsLoggedIn())
+			connectingScreen.SetActive(true);
+		else
+			gameManager.LoadPlayer();
 		//DisableButtons();
 		
 	}
@@ -74,6 +82,34 @@ public class GameUI : MonoBehaviour
 			helmetbuttons.Add(tmpButton);
 		}
 	}
+
+	public void RemoveConnectScreen()
+	{
+		connectingScreen.SetActive(false);
+	}
+
+	public void RegisterButton()
+	{
+		gameManager.Register(emailInput.text, passwordInput.text);
+	}
+
+	public void LoginButton()
+	{
+		gameManager.Login(emailInput.text, passwordInput.text);
+	}
+
+	public void ResetPasswordButton()
+	{
+		gameManager.ResetPassword(emailInput.text, passwordInput.text);
+	}
+
+	public void Message(string message)
+	{
+		messageText.text = message;
+	}
+
+	
+
 	/*
 	public void HelmetSelected(int helmetID)
 	{
@@ -102,9 +138,4 @@ public class GameUI : MonoBehaviour
 		}
 	}
 	*/
-
-	public void RemoveConnectScreen()
-	{
-		connectingScreen.SetActive(false);
-	}
 }

@@ -17,7 +17,7 @@ public class GeneratePlayer : MonoBehaviour
 	[SerializeField] private Text nameTag;
 	[SerializeField] private Button challengeButton;
 
-
+	
 	private void Start()
 	{
 		//mainPlayer = GameObject.Find("_PLAYER_").GetComponent<Player>();

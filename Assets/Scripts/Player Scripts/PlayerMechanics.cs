@@ -14,6 +14,7 @@ public class PlayerMechanics : MonoBehaviour
 	{
 		playerData.level++;
 
+
 		for (int i = 0; i < 1; i++)
 		{
 			RecieveHelmet(playerData);

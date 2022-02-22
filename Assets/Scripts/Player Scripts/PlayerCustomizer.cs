@@ -130,7 +130,29 @@ public class PlayerCustomizer : MonoBehaviour
 	void OnDataSend(UpdateUserDataResult result)
 	{
 		Debug.Log("Successfully sent data!");
+		SendFirstLevelLeaderboard();
 		SceneManager.LoadScene("GameScene");
+	}
+
+	public void SendFirstLevelLeaderboard()
+	{
+		var request = new UpdatePlayerStatisticsRequest
+		{
+			Statistics = new List<StatisticUpdate>
+			{
+				new StatisticUpdate
+				{
+					StatisticName = "Levels",
+					Value = 1
+				}
+			}
+		};
+		PlayFabClientAPI.UpdatePlayerStatistics(request, OnLeaderBoardUpdate, OnError);
+	}
+
+	void OnLeaderBoardUpdate(UpdatePlayerStatisticsResult result)
+	{
+		Debug.Log("Successfully sent level to leaderboard.");
 	}
 
 	void OnError(PlayFabError error)

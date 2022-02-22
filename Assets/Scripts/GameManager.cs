@@ -13,7 +13,11 @@ public class GameManager : MonoBehaviour
 	public GameUI UI;
 	public Items items;
 
-	public bool isLoggedIn = false;
+
+	public bool IsLoggedIn()
+	{
+		return playfabManager.IsLoggedIn();
+	}
 
 	private void SetupScripts()
 	{
@@ -32,24 +36,17 @@ public class GameManager : MonoBehaviour
 
 	public void GameSetup()
 	{
+		Debug.Log("Setting up game.");
+
 		SetupScripts();
-
-		//Login player
-		playfabManager.Login();
-
-
-		//if player does not have character
-		//open character creation page
-
-		//load player
-
-		//update UI
+		UI.SetupUI();
+		
 	}
 
 	public void LoggedIn()		
 	{
-		isLoggedIn = true;
-		playfabManager.DoesPlayerExist();		//Once logged in it will check whether player exist
+		playfabManager.DoesPlayerExist();       //Once logged in it will check whether player exist
+		
 	}
 
 	public void PlayerHasNotBeenCreated()		//If player does not exist it will open character creation scene
@@ -59,7 +56,9 @@ public class GameManager : MonoBehaviour
 
 	public void PlayerHasBeenCreated()		//If player does exist load the player data from playfab servers and player script
 	{
+		Debug.Log("been here done that");
 		playfabManager.LoadPlayer();
+		playfabManager.GetLeaderboard();
 	}
 
 	public void PlayerHasBeenLoaded(PlayerData _playerData)		//Only updates the UI once all of the above is done eg. logged in and player loaded
@@ -90,4 +89,35 @@ public class GameManager : MonoBehaviour
 	{
 		playfabManager.DeletePlayerData();
 	}
+
+	public void UpdateLevelLeaderboard(int level)
+	{
+		playfabManager.SendLeaderboard(level);
+	}
+
+	public void MessageUI(string message)
+	{
+		UI.Message(message);
+	}
+
+	public void Register(string email, string password)
+	{
+		playfabManager.Register(email, password);
+	}
+
+	public void Login(string email, string password)
+	{
+		playfabManager.Login(email, password);
+	}
+
+	public void ResetPassword(string email, string password)
+	{
+		playfabManager.ResetPassword(email, password);
+	}
+
+	public void LoginAfterRegister()
+	{
+		UI.LoginButton();
+	}
+
 }

@@ -26,11 +26,15 @@ class Fighters
 public class FightSceneManager : MonoBehaviour
 {
 	[SerializeField] private FightRecord fightRecord;
+	//[SerializeField] private Turns currentTurn;
+	[SerializeField] private int turnIndex;
 
 	[SerializeField] private Fighters[] fighters;
+	[SerializeField] private GameObject fighterPrefab;
 	[SerializeField] private int currentFighter = 0;
 
-	[SerializeField] private GameObject fighterPrefab;
+	bool inAttack = false;
+	bool fightOver = false;
 
 	private void Start()
 	{
@@ -47,7 +51,57 @@ public class FightSceneManager : MonoBehaviour
 		};
 	}
 
+	private void StartFight()
+	{
 
+	}
+
+	private void Attack()
+	{
+		if (turnIndex == fightRecord.allTurns.Count - 1)	//------------------Checks if the fight is over
+			return;
+		else
+			fightOver = true;
+		//--------
+
+		WeaponsHandler();
+		
+
+
+		//--------
+		inAttack = true;
+		currentFighter = (currentFighter == 0) ? 1 : 0;
+	}
+
+	private void WeaponsHandler()
+	{
+		if (fightRecord.allTurns[turnIndex].equippedWeapon == true)
+			EquipWeapon();
+		if (fightRecord.allTurns[turnIndex].threwWeapon == true)
+			ThrowWeapon();
+	}
+
+	private void EquipWeapon()
+	{
+
+	}
+
+	private void ThrowWeapon()
+	{
+
+	}
+	/*
+	private void Update()
+	{
+		if (fightOver == true)
+			return;
+
+
+		if (inAttack == false)
+			Attack();
+
+	}
+	*/
 }
 		//tmpFightPlayer.hairSlot.sprite = items.hair[fightRecord.player1.hairColor][fightRecord.player1.hair];
 		//tmpFightPlayer.facialHairSlot.sprite = items.facialHair[fightRecord.player1.facialHairColor][fightRecord.player1.facialHair];

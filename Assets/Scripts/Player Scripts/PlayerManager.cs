@@ -18,11 +18,14 @@ public class PlayerManager : MonoBehaviour
 
 
 	[Header("Player Compenents")]
-	private PlayerEquipper playerEquipper;
-	private PlayerMechanics playerMechanics;
+	[SerializeField] private PlayerEquipper playerEquipper;
+	[SerializeField] private PlayerMechanics playerMechanics;
 
-	private void Start()
+	private void Awake()
 	{
+		if (items == null)
+			items = GameObject.Find("_ITEMS_").GetComponent<Items>();
+
 		if (Equipper == true)
 		{
 			if (!(playerEquipper = GetComponent<PlayerEquipper>()))
@@ -35,7 +38,6 @@ public class PlayerManager : MonoBehaviour
 				Debug.Log("Could not find PlayerMechanics component.");
 			playerMechanics.playerManager = this;
 		}
-
 	}
 	
 
@@ -56,6 +58,7 @@ public class PlayerManager : MonoBehaviour
 	{
 		playerMechanics.LevelUp(playerData);
 		gameManager.SavePlayer(playerData);
+		gameManager.UpdateLevelLeaderboard(playerData.level);
 	}
 
 	public PlayerData ReturnDataClass()

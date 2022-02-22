@@ -1,9 +1,19 @@
 ﻿<Properties StartupConfiguration="{2D684ECF-783E-AF77-7A10-B0DDAE811F2E}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Arena Scripts/FightSceneManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayfabManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/Arena Scripts/FightSceneManager.cs" Line="40" Column="30" />
-      <File FileName="Assets/Scripts/Player Scripts/PlayerMechanics.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Player Scripts/PlayerManager.cs" Line="51" Column="3" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="54" Column="46" IsPinned="True" />
+      <File FileName="Assets/Scripts/GameUI.cs" Line="111" Column="2" IsPinned="True" />
+      <File FileName="Assets/Scripts/PlayfabManager.cs" Line="202" Column="3" IsPinned="True" />
+      <File FileName="Assets/PlayerBanner.cs" Line="28" Column="1" />
+      <File FileName="Assets/Scripts/GeneratePlayer.cs" Line="85" Column="3" />
+      <File FileName="Assets/Scripts/Player Scripts/PlayerCustomizer.cs" Line="168" Column="27" />
+      <File FileName="Assets/Scripts/Arena Scripts/FightSceneManager.cs" Line="51" Column="5" />
+      <File FileName="Assets/Scripts/Player Scripts/PlayerManager.cs" />
+      <File FileName="Assets/Scripts/Player Scripts/PlayerEquipper.cs" />
+      <File FileName="Assets/Scripts/Turns.cs" />
+      <File FileName="Assets/Scripts/Arena Scripts/FightRecord.cs" />
+      <File FileName="Assets/TempSetInActive.cs" />
+      <File FileName="Assets/Scripts/Player Scripts/PlayerMechanics.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,10 +25,9 @@
                 <Node name="Client" expanded="True" />
               </Node>
               <Node name="Scripts" expanded="True">
-                <Node name="Arena Scripts" expanded="True">
-                  <Node name="FightSceneManager.cs" selected="True" />
-                </Node>
+                <Node name="Arena Scripts" expanded="True" />
                 <Node name="Player Scripts" expanded="True" />
+                <Node name="PlayfabManager.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -28,7 +37,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="f6deb1a8-f7bb-447e-b7b3-fa69b86e8507" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="fa2dd5c9-957b-4163-acb6-c2ecf638125c" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
