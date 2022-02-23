@@ -220,6 +220,7 @@ public class PlayfabManager : MonoBehaviour
 		Debug.Log("Error while logging in/creating account.");
 		Debug.Log(error.GenerateErrorReport());
 	}
+	
 	//--------------------------------------------------------------------------
 
 	void GetBannerPlayers()
@@ -237,6 +238,7 @@ public class PlayfabManager : MonoBehaviour
 
 	void BannerPlayerDataReceived(GetUserDataResult result)
 	{
+
 		if (result.Data != null && result.Data.ContainsKey("PlayerData"))
 		{
 			List<PlayerData> playerData = JsonConvert.DeserializeObject<List<PlayerData>>(result.Data["PlayerData"].Value);
@@ -247,6 +249,10 @@ public class PlayfabManager : MonoBehaviour
 			playerBanner[index].ReceivedPlayerData(playerData[0]);
 			index++;
 			GetBannerPlayers();
+		}
+		else
+		{
+			Debug.Log("not received");
 		}
 	}
 }

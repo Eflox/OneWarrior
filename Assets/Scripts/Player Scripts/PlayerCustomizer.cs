@@ -120,9 +120,10 @@ public class PlayerCustomizer : MonoBehaviour
 		var request = new UpdateUserDataRequest
 		{
 			Data = new Dictionary<string, string>
-		{
-			{"PlayerData", JsonConvert.SerializeObject(players) }
-		}
+			{
+				{"PlayerData", JsonConvert.SerializeObject(players) }
+			},
+			Permission = UserDataPermission.Public
 		};
 		PlayFabClientAPI.UpdateUserData(request, OnDataSend, OnError);
 	}
